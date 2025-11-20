@@ -1,0 +1,84 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "product name": "Laptop HP",
+            "category": "Electronics",
+            "unit price (EUR)": 800,
+            "stock available": 15,
+            "Manufacturer": "HP",
+            "Weight (kg)": 2.5,
+            "release date": "2022-05-15"
+        },
+        {
+            "id": 2,
+            "product name": "Smartphone Samsung",
+            "category": "Electronics",
+            "unit price (EUR)": 500,
+            "stock available": 20,
+            "Manufacturer": "Samsung",
+            "Weight (kg)": 0.3,
+            "release date": "2022-04-01"
+        },
+        {
+            "id": 3,
+            "product name": "Book «1984»",
+            "category": "Books",
+            "unit price (EUR)": 20,
+            "stock available": 50,
+            "Manufacturer": "",
+            "Weight (kg)": "",
+            "release date": "1949-06-08"
+        },
+        {
+            "id": 4,
+            "product name": "Canon Camera",
+            "category": "Electronics",
+            "unit price (EUR)": 600,
+            "stock available": 10,
+            "Manufacturer": "Canon",
+            "Weight (kg)": 1.2,
+            "release date": "2022-03-20"
+        },
+        {
+            "id": 5,
+            "product name": "Sony Headphones",
+            "category": "Electronics",
+            "unit price (EUR)": 100,
+            "stock available": 30,
+            "Manufacturer": "Sony",
+            "Weight (kg)": 0.5,
+            "release date": "2022-02-10"
+        },
+        {
+            "id": 6,
+            "product name": "Wacom Tablet",
+            "category": "Electronics",
+            "unit price (EUR)": 300,
+            "stock available": 12,
+            "Manufacturer": "Wacom",
+            "Weight (kg)": 0.7,
+            "release date": "2022-06-05"
+        },
+        {
+            "id": 7,
+            "product name": "Athletic Shoes",
+            "category": "Fashion",
+            "unit price (EUR)": 80,
+            "stock available": 25,
+            "Manufacturer": "Nike",
+            "Weight (kg)": 0.8,
+            "release date": ""
+        },
+        {
+            "id": 8,
+            "product name": "Samsung Refrigerator",
+            "category": "Appliances",
+            "unit price (EUR)": 1000,
+            "stock available": 8,
+            "Manufacturer": "Samsung",
+            "Weight (kg)": 80.0,
+            "release date": "2019-01-01"
+        }
+    ]
+}

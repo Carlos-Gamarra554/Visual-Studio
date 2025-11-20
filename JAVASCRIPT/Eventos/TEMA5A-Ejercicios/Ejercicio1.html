@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Eventos</title>
+</head>
+<body>
+    <h1>Ejercicio 1 - Eventos</h1>
+    <p>Haz clic en cualquier lugar de la pantalla</p>
+</body>
+<script>
+    window.addEventListener("click", function() {
+        alert("Has hecho clic en: (x: " + event.clientX + ", y: " + event.clientY + ")");
+    })
+</script>
+</html>

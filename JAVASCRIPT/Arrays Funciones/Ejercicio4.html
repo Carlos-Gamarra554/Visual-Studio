@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 4 - Arrays y Funciones</title>
+    </head>
+    <body>
+        <h2>Ejercicio 4 - Arrays y Funciones</h2>
+        <div id="resultado"></div>
+
+        <script>
+            const personas = [
+                {nombre: "Lucía", edad: 65, ojos: "azul"},
+                {nombre: "Carlos", edad: 30, ojos: "marrón"},
+                {nombre: "Ana", edad: 72, ojos: "azul"},
+                {nombre: "Drácula", edad: 298, ojos:"rojos"}
+            ];
+
+            const iamblue = personas.filter(persona => persona.edad >= 65 && persona.ojos === "azul");
+            console.log("Jubilados con ojos azules: ", iamblue);
+        </script>
+    </body>
+</html>

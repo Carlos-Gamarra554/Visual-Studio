@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KITT</title>
+</head>
+<body>
+    <h1>Ejercicio "El Coche Fantástico"</h1>
+    <div id="mostrar"></div>
+    <div id="mostrar2"></div>
+    <div id="mostrar3"></div>
+
+    <script>
+        function Coche(puertas=3, ruedas=4, rrepuesto, marca, combustible){
+            this.puertas=puertas;
+            this.ruedas=ruedas;
+            this.rrepuesto=rrepuesto;
+            this.marca=marca;
+            this.combustible=combustible;
+        }
+
+        const micoche = new Coche(5,4,false,"Renault","gasolina");
+        const KITT = new Coche(2,4,true,"Pontiac","gasolina");
+
+        const valores1 = Object.values(micoche);
+        const valores2 = Object.values(KITT);
+
+        document.getElementById("mostrar").innerHTML = "Valores de Micoche:<br>" + valores1 + "<br><br>";
+        document.getElementById("mostrar2").innerHTML = "Valores de KITT:<br>" + valores2;
+
+        micoche.color = "negro";
+
+        alert("El color de micoche es: " + micoche.color);
+        alert("El color de KITT es: " + KITT.color);
+
+        Coche.prototype.color;
+
+        KITT.pintar = function(color){
+            this.color = color;
+        }
+
+        alert("El color de micoche es: " + micoche.color);
+        alert("El color de KITT es: " + KITT.color);
+
+        KITT.pintar("Morado");
+        micoche.color = "Fresa";
+
+        Coche.prototype.pintar = function(color){
+            this.color = color;
+        }
+
+        KITT.pintar("Amarillo");
+        micoche.pintar("Fresa");
+
+        alert("El color de micoche es: " + micoche.color);
+        alert("El color de KITT es: " + KITT.color);
+
+        KITT.setMarca = function(marca){
+            this.marca = marca;
+        }
+
+        Coche.prototype.getTotal = function(){
+            return "Total: " + (this.puertas + this.ruedas);
+        }
+
+        const laguagua = new Coche(5,4,true,"Laguagua","gasolina", "Blanco");
+
+        alert("El color de micoche es: " + micoche.color);
+        alert("El color de KITT es: " + KITT.color);
+        alert("El color de laguagua es: " + laguagua.color);
+
+        alert("La suma de puertas y ruedas de micoche es: " + micoche.getTotal());
+        alert("La suma de puertas y ruedas de KITT es: " + KITT.getTotal());
+        alert("La suma de puertas y ruedas de laguagua es: " + laguagua.getTotal());
+
+        valores1.push(Object.values(micoche));
+        valores2.push(Object.values(KITT));
+        const valores3 = Object.values(laguagua);
+
+        document.getElementById("mostrar").innerHTML = "Valores de Micoche:<br>" + valores1 + "<br><br>";
+        document.getElementById("mostrar2").innerHTML = "Valores de KITT:<br>" + valores2 + "<br><br>";
+        document.getElementById("mostrar3").innerHTML = "Valores de Laguagua:<br>" + valores3;
+
+        let propiedadesKITT = "";
+        for(let propiedad in KITT){
+            propiedadesKITT += propiedad + ", ";
+        }
+        alert("Propiedades de KITT: " + propiedadesKITT);
+
+        let valoresKITT = "";
+        for(let propiedad in KITT){
+            valoresKITT += KITT[propiedad] + ", ";
+        }
+        alert("Valores de KITT: " + valoresKITT);
+    </script>
+</body>
+</html>

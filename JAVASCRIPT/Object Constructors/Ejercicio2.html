@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h1>Ejercicio 2: Constructor de Objetos</h1>
+    <p id="demo"></p>
+    <script>
+        function Persona(firstName, lastName, age, eyeColor, nationality) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.fullName = function() {
+                return this.firstName + " " + this.lastName;
+            }
+            this.age = age;
+            this.eyeColor = eyeColor;
+            this.nationality = nationality;
+        }
+
+        const padre = new Persona("Juan", "López", 50, "Azul");
+        const madre = new Persona("María", "García", 48, "Verde");
+        const hijo = new Persona("Carlos", "López", 20, "Marrón");
+
+        document.getElementById("demo").innerHTML = "Nombre completo del hijo: " + hijo.fullName() + ".<br><br>";
+
+        Persona.prototype.nationality = "Zamunda";
+        const abuelo = new Persona("Pepe", "Doe", 88, "Azul");
+
+        document.getElementById("demo").innerHTML += "El abuelo es de: " + abuelo.nationality + 
+        ".<br><br>El padre es de: " + padre.nationality + ".<br><br>";
+
+        Persona.prototype.changeColor = function() {
+            this.eyeColor = "Negro";
+        }
+
+        abuelo.changeColor();
+        document.getElementById("demo").innerHTML += "El color de ojos del abuelo es: " + abuelo.eyeColor + ".";
+    </script>
+</body>
+</html>

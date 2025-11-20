@@ -1,0 +1,109 @@
+* {
+    margin-top: 25px;
+}
+
+table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        margin-top: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        table-layout: fixed;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 0;
+        text-align: center;
+        height: 50px;
+    }
+    
+    .textoDia {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        margin: auto;
+        border-radius: 50%;
+        transition: all 0.2s ease;
+    }
+
+    .encabezado {
+        background-color: #007bff;
+        color: white;
+        padding: 6px;
+    }
+
+    .dias-semana th {
+        background-color: #f0f0f0;
+        font-weight: bold;
+        padding: 6px;
+    }
+
+    td.hoy .textoDia {
+        background-color: #ffc;
+        font-weight: bold;
+        border: 2px solid #f0ad4e;
+    }
+
+    td.otro-mes {
+        color: #aaa;
+        background-color: #f9f9f9;
+    }
+
+    td.day {
+        cursor: pointer;
+    }
+
+    td.day:not(.seleccionado):hover .textoDia {
+        background-color: #e9ecef;
+        color: #000;
+    }
+
+    td.seleccionado .textoDia {
+        background-color: #007bff;
+        color: white;
+    }
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    max-width: 600px;
+    margin: 20px auto 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+    .botones select,
+    .botones button {
+        font-size: 15px;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fff;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .botones select {
+        flex-grow: 1;
+    }
+
+    .botones button {
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 45px;
+        font-weight: bold;
+        color: #007bff;
+        text-align: center;
+    }
+
+    .botones button:hover {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .botones select:hover {
+        border-color: #007bff;
+    }

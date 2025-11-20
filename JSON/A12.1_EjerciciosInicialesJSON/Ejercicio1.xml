@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<empleados>
+    <empleado>
+        <Nombre>John</Nombre>
+        </Apellido>Doe</Apellido>
+        <Fecha_nacimiento>1985-05-20</Fecha_nacimiento>
+        <Puesto>Gerente de Proyectos</Puesto>
+        <Departamento>Desarrollo</Departamento>
+    </empleado>
+    <empleado>
+        <Nombre>Jane</Nombre>
+        <Apellido>Smith</Apellido>
+        <Fecha_nacimiento>1990-09-15</Fecha_nacimiento>
+        <Puesto>Analista de Datos</Puesto>
+        <Departamento>Análisis</Departamento>
+    </empleado>
+    <empleado>
+        <Nombre>Michael</Nombre>
+        <Apellido>Johnson</Apellido>
+        <Fecha_nacimiento>1988-12-10</Fecha_nacimiento>
+        <Puesto>Programador</Puesto>
+        <Departamento>Desarrollo</Departamento>
+    </empleado>
+</empleados>

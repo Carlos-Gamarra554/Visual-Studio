@@ -1,0 +1,36 @@
+<!DOCTYPE HTML> 
+<html lang="es-ES"> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<title>DOM: Ejercicio 6</title> 
+	</head> 
+	<body> 
+        <script>
+            const parrafo = document.createElement("p");
+
+            const texto = document.createTextNode("Éste es un párrafo con una palabra ");
+
+            parrafo.appendChild(texto);
+
+            const em = document.createElement("em");
+            const textoEm = document.createTextNode("enfatizada");
+            em.appendChild(textoEm);
+
+            parrafo.appendChild(em);
+
+            const texto2 = document.createTextNode(" y otras aún ");
+
+            parrafo.appendChild(texto2);
+
+            const strong = document.createElement("strong");
+            const textoStrong = document.createTextNode("más enfatizadas");
+            strong.appendChild(textoStrong);
+
+            parrafo.appendChild(strong);
+
+            const texto3 = document.createTextNode(".");
+
+            parrafo.appendChild(texto3);
+        </script>
+	</body>
+</html>

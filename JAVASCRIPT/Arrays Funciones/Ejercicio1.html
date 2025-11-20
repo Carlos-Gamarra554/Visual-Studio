@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 1 - Arrays y Funciones</title>
+    </head>
+    <body>
+        <h2>Ejercicio 1 - Arrays y Funciones</h2>
+        <div id="resultado"></div>
+
+        <script>
+            const numeros = [44, 5, 22, 21, 56, 9, 789, 41, 8]
+            const MenoraMayor = numeros.slice().sort(function(a,b) {return a - b});
+            const Mayoramenor = numeros.slice().sort(function(a,b) {return b - a});
+           
+            document.getElementById("resultado").innerHTML = "Números sin ordenar: " + numeros.join(", ") + "<br><br>"
+            + "Números ordenados de menor a mayor: " + MenoraMayor.join(", ") + "<br><br>"
+            + "Números ordenados de mayor a menor: " + Mayoramenor.join(", ");
+        </script>
+    </body>
+</html>

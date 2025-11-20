@@ -1,0 +1,7 @@
+<!ELEMENT school (student+)>
+<!ELEMENT student (name, age)>
+<!ATTLIST student
+    id ID #REQUIRED
+    status (Active | Inactive | Graduated) #IMPLIED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT age (#PCDATA)>

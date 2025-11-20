@@ -1,0 +1,28 @@
+{
+    "empleados": {
+        "empleado": [
+            {
+                "Nombre": "John",
+                "Apellido": "Doe",
+                "Fecha_nacimiento": "1985-05-20",
+                "Puesto": "Gerente de Proyectos",
+                "Departamento": "Desarrollo"
+            },
+            {
+                "Nombre": "Jane",
+                "Apellido": "Smith",
+                "Fecha_nacimiento": "1990-09-15",
+                "Puesto": "Analista de Datos",
+                "Departamento": "Análisis"
+            },
+            {
+                "Nombre": "Michael",
+                "Apellido": "Johnson",
+                "Fecha_nacimiento": "1988-12-10",
+                "Puesto": "Programador",
+                "Departamento": "Desarrollo"
+            }
+        ]
+    }
+    
+}

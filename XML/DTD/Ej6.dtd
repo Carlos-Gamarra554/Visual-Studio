@@ -1,0 +1,8 @@
+<!ELEMENT store (product+)>
+<!ELEMENT product (name, price, category)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+
+<!ENTITY % commonCategories "Phone | Tablet | Laptop">
+<!ATTLIST category type (%commonCategories;) #IMPLIED>

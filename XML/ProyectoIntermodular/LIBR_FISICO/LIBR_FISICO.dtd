@@ -1,0 +1,7 @@
+<!DOCTYPE libr_fisico [
+<!ELEMENT libr_fisico (libro*)>
+<!ELEMENT libro (cod_libro, ISBN, num_paginas)>
+<!ELEMENT cod_libro (#PCDATA)>
+<!ELEMENT ISBN (#PCDATA)>
+<!ELEMENT num_paginas (#PCDATA)>
+]>

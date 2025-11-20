@@ -1,0 +1,7 @@
+<!DOCTYPE libr_digital [
+<!ELEMENT libr_digital (libro*)>
+<!ELEMENT libro (cod_libro, ISBN, tamano_archivo)>
+<!ELEMENT cod_libro (#PCDATA)>
+<!ELEMENT ISBN (#PCDATA)>
+<!ELEMENT tamano_archivo (#PCDATA)>
+]>

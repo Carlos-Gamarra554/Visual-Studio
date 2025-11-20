@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteca</title>
+</head>
+<body>
+    <h2>Gestión de Biblioteca</h2>
+
+    <form method="post" action="main.php">
+        <input type="hidden" name="accion" value="listar">
+        <input type="submit" value="Mostrar todos los libros">
+    </form>
+
+    <form method="post" action="main.php">
+        <h3>Añadir un libro</h3>
+        <input type="hidden" name="accion" value="agregar">
+        <input type="text" name="titulo" placeholder="Título del libro" required><br><br>
+        <input type="text" name="autor" placeholder="Autor del libro" required><br><br>
+        <input type="submit" value="Agregar libro">
+    </form>
+
+    <form method="post" action="main.php">
+        <h3>Buscar un libro</h3>
+        <input type="hidden" name="accion" value="buscar">
+        <input type="text" name="tituloBuscar" placeholder="Título a buscar" required><br><br>
+        <input type="submit" value="Buscar libro">
+    </form>
+</body>
+</html>

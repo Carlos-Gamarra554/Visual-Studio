@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 2 - Arrays y Funciones</title>
+    </head>
+    <body>
+        <h2>Ejercicio 2 - Arrays y Funciones</h2>
+        <div id="resultado"></div>
+
+        <script>
+            const personas = [
+                {nombre: "Ana", edad: 34},
+                {nombre: "Luis", edad: 28},
+                {nombre: "Carlos", edad: 45},
+                {nombre: "Marta", edad: 22},
+            ]
+            console.log(personas);
+
+            const MenoraMayor = personas.slice().sort(function(a,b) {return a.edad - b.edad});
+            const Mayoramenor = personas.slice().sort(function(a,b) {return b.edad - a.edad});
+
+            console.log("Ordenado de menor a mayor edad: ", MenoraMayor);
+            console.log("Ordenado de mayor a menor edad: ", Mayoramenor);
+        </script>
+    </body>
+</html>

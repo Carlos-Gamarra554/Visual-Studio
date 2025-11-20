@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - Eventos</title>
+</head>
+<body>
+    <h1>Ejercicio 3 - Eventos</h1>
+    <p>Pulsa una tecla!</p>
+    <p id="demo"></p>
+</body>
+<script>
+    window.addEventListener("keydown", function() {
+        if(event.key === " ") {
+        document.getElementById("demo").innerHTML = "Tecla pulsada: espacio (unicode: " + event.keyCode + ")";
+        } else {
+        document.getElementById("demo").innerHTML = "Tecla pulsada: " + event.key + " (unicode: " + event.keyCode + ")";
+        }
+    })
+</script>
+</html>

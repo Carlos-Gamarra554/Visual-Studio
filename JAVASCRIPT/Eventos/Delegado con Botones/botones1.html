@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Event Delegation Example</title>
+    <meta charset="UTF-8" />
+    <style>
+        table, th, td {
+          border: 1px solid;
+        }
+        </style>
+</head>
+<body>
+    <div id="buttons">
+        <table>
+            <tr>
+                <td>1</td>
+                <td>
+                    <button class="buttonClass">Click me</button>
+                </td>
+            </tr> 
+            <tr>
+                <td>2</td>
+                <td>
+                    <button class="buttonClass">Click me</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td> 
+                <td>          
+                    <button class="buttonClass">Click me</button>
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>
+                    <button class="buttonClass">Click me</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById('buttons').addEventListener('click', function(event) {
+            if(event.target.classList.contains('buttonClass')){
+                const numero = event.target.parentElement.previousElementSibling.innerText;
+
+                alert("Has pulsado el botón número: " + numero);
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+<body>
+  <table>
+    <tr>
+      <td id="n1">1</td>
+      <td id="n2">2</td>
+      <td id="n3">3</td>
+    </tr>
+    <tr>
+      <td id="n4">4</td>
+      <td id="nX">5</td>
+      <td id="n6">6</td>
+    </tr>
+    <tr>
+      <td id="n7">7</td>
+      <td id="n8">8</td>
+      <td id="n9">9</td>
+    </tr>
+  </table>
+    <script>
+        function intercambio(origen, destino) {
+            const nT = document.createElement("td");
+
+            const padreOrigen = origen.parentNode;
+            const padreDestino = destino.parentNode;
+
+            padreOrigen.replaceChild(nT, origen);
+            padreDestino.replaceChild(origen,destino);
+            padreOrigen.replaceChild(destino,nT);
+        }
+
+        function intercambio2(origen, destino) {
+            const nT = document.createElement("td");
+
+            origen.replaceWith(nT);
+            destino.replaceWith(origen);
+            nT.replaceWith(destino);
+        }
+
+        const celda1 = document.getElementById("n1");
+        const celda7 = document.getElementById("n7");
+
+        intercambio(celda1, celda7);
+    </script>
+</body>
+</html>

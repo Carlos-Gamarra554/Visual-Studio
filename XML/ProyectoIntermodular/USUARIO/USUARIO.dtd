@@ -1,0 +1,10 @@
+<!DOCTYPE usuario [
+<!ELEMENT usuario (usuario)>
+<!ELEMENT usuario (id, nombre, direccion, telefono, mail, fregistro)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>
+<!ELEMENT telefono (#PCDATA)>
+<!ELEMENT mail (#PCDATA)>
+<!ELEMENT fregistro (#PCDATA)>
+]>

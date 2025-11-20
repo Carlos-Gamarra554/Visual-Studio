@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Edad en años, meses y días</title>
+</head>
+<body>
+    <p id="edad"></p>
+    <script>
+
+        const nacimiento = new Date("1990-05-15");
+        const hoy = new Date();
+
+        let años = hoy.getFullYear() - nacimiento.getFullYear();
+        let meses = hoy.getMonth() - nacimiento.getMonth();
+        let días = hoy.getDate() - nacimiento.getDate();
+
+        if (días < 0) {
+            meses--;
+
+            const mesAnterior = new Date(hoy.getFullYear(), hoy.getMonth(), 0);
+            días += mesAnterior.getDate();
+        }
+        if (meses < 0) {
+            años--;
+            meses += 12;
+        }
+
+        const resultado = `Edad: ${años} años, ${meses} meses y ${días} días.`;
+        document.getElementById("edad").textContent = resultado;
+        console.log(resultado);
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="puertas"></p>
+    <script>
+        const empleados = [
+            { nombre: "Ana", salario: 1800 },
+            { nombre: "Luis", salario: 2200 },
+            { nombre: "Marta", salario: 2000 }
+        ];
+
+        //Apartado 1
+        const empleadosBonus = [];
+        for (let empleado of empleados) {
+            empleado.salarioConBonus = empleado.salario * 1.1;
+            empleadosBonus.push(empleado);
+        }
+
+        //Apartado 2
+        for (let empleado of empleadosBonus) {
+            console.log(`${empleado.nombre} tiene un salario base de ${empleado.salario}€ y con bonus gana ${empleado.salarioConBonus}€`);
+        }
+    </script>
+    </body>
+</html>

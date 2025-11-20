@@ -1,0 +1,37 @@
+{
+    "employees": {
+        "employee1": [
+            {
+                "Name": "Juan Pérez",
+                "Age": "35",
+                "Position": "Senio Developer",
+                "Department": "Technology",
+                "Salary": "75000",
+                "Location": "Madrid, Spain"
+            }
+        ],
+
+            "employee2": [
+            {
+                "Name": "María Rodríguez",
+                "Age": "28",
+                "Position": "Graphic Designer",
+                "Department": "Design",
+                "Salary": "60000",
+                "Location": "Paris, France"
+            }
+        ],
+
+        "employee3": [
+            {
+                "Name": "Carlos Gómez",
+                "Age": "40",
+                "Position": "Project Manager",
+                "Department": "Project Management",
+                "Salary": "90000",
+                "Location": "Berlin, Germany"
+            }
+        ]
+    }
+    
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+</head>
+<body>
+    <h2>JavaScript Validation</h2>
+
+    <form name="myForm" action="/action_page.php" method="post">
+        Name: <input type="text" name="fname" id="fname">
+        <input type="button" value="Submit" id="submit">
+    </form>
+
+    <script>
+        const boton = document.getElementById("submit");
+
+        boton.type = "submit";
+
+        document.forms["myForm"].addEventListener("submit", function(event) {
+            let nombre = document.forms["myForm"]["fname"].value;
+
+             if(nombre === "") {
+                event.preventDefault();
+                alert("Debes rellenar el campo con tu nombre!");
+             }
+        });
+    </script>
+</body>
+</html>

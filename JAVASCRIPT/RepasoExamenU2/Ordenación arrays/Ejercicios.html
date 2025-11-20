@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="puertas"></p>
+    <script>
+        //Ejercicio 1
+        const frutas = ["pera", "manzana", "kiwi"];
+
+        frutas.sort()
+
+        console.log(frutas)
+
+        //Ejercicio 2
+        const numeros = [5, 2, 9, 1];
+
+        numeros.sort((a, b) => a - b);
+
+        console.log(numeros);
+
+        //Ejercicio 3
+        const personas = [
+            { nacionalidad: "Francesa", sueldo: 2500, estatura: 1.75 },
+            { nacionalidad: "Española", sueldo: 1800, estatura: 1.80 },
+            { nacionalidad: "Italiana", sueldo: 2200, estatura: 1.70 }
+        ];
+
+        let criterio = prompt("Elige el valor por el que ordenar las personas(nacionalidad, estatura o sueldo):")
+        criterio.toLowerCase
+
+        personas.sort((a, b) => {
+            if (criterio === 'nacionalidad') {
+                return a.nacionalidad.localeCompare(b.nacionalidad)
+            } else if (criterio === 'estatura') {
+                return a.estatura - b.estatura
+            } else if (criterio === 'sueldo') {
+                return a.sueldo - b.sueldo
+            } else {
+                console.warn("Error. Valor no válido!")
+            }
+        });
+
+        console.log(personas)
+    </script>
+    </body>
+</html>

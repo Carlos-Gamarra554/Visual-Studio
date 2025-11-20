@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <author>Carlos Gamarra Tomás</author>
+</head>
+<body>
+    <h1>Ejercicio5</h1>
+    <script>
+        let menu = prompt("Elija menú de carne, pescado o verdura:");
+
+        switch (menu.toLowerCase()) {
+            case "carne":
+                console.log("Ha elegido carne. La bebida mas adecuada es un vino tinto.");
+                break;
+            case "pescado":
+                console.log("Ha elegido pescado. La bebida más adecuada es un vino blanco.");
+                break;
+            case "verdura":
+                console.log("Ha elegido verdura. La bebida más adecuada es agua.");
+                break;
+            default:
+                console.log("Opción no válida. Escriba solamente carne, pescado o verdura.");
+        }
+    </script>
+</body>
+</html>

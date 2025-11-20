@@ -1,0 +1,9 @@
+<!DOCTYPE hardwareCatalog [
+<!ELEMENT hardwareCatalog (item+)>
+<!ELEMENT item (id, type, brand, model, specifications)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT brand (#PCDATA)>
+<!ELEMENT model (#PCDATA)>
+<!ELEMENT specifications (#PCDATA)>
+]>

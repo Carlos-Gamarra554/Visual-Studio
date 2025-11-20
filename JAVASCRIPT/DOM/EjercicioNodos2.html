@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Click the button get info about the body element's child nodes.</p>
+        <p id="demo"> </p>
+        <button onclick="myFunction(document.body.getElementsByTagName('p')[0])">Muestra
+        los hijos del primer párrafo</button>
+        <button onclick="myFunction(document.body.getElementsByTagName('p')[1])">Muestra
+        los hijos del segundo párrafo</button>
+        <button onclick="myFunction(document.body.getElementsByTagName('p')[2])">Muestra
+        los hijos del tercer párrafo</button>
+        <p><strong>Note:</strong> Whitespace inside elements is considered as text, and text
+        is considered as nodes. Comments are also considered as nodes.</p>
+
+        <script>
+            function myFunction(nodoP) {
+            var c = nodoP.childNodes;
+            var txt = "";
+            var i;
+
+            for (i = 0; i < c.length; i++) {
+                txt = txt + c[i].nodeName + "<br>";
+                }
+            document.getElementById("demo").innerHTML = txt;
+            }
+        </script>
+    </body>
+</html>

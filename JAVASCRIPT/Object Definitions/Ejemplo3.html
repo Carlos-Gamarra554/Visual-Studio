@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 1</title>
+</head>
+<body>
+    <h1>Ejemplo 1: Definición de Objetos</h1>
+    <p id="demo"></p>
+    <script>
+        const person = {};
+        person.firstName = "Pedro";
+        person.lastName = "Fernández";
+        person.age = 50;
+
+        document.getElementById("demo").innerHTML = 
+            "Nombre: " + person.firstName + "<br>" +
+            "Apellido: " + person.lastName + "<br>" +
+            "Edad: " + person.age;
+    </script>
+</body>
+</html>

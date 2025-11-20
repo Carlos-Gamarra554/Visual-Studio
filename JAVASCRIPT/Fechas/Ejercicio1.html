@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Fechas</title>
+    <author>Carlos Gamarra Tomás</author>
+</head>
+<body>
+    <h1>Ejercicio Fechas</h1>
+    <p id="text"></p>
+    <script>
+        const fechaActual = new Date();
+        
+        document.getElementById("text").innerHTML += "Fecha actual: " + fechaActual + "<br><br>";
+
+        console.log(fechaActual);
+
+        const fechaString = fechaActual.toDateString();
+        console.log(fechaActual);
+
+        console.log("Milisegundos desde 1970:", fechaActual.getTime);
+
+        const cumple = new Date("2006-05-22")
+
+        const diferenciaAños = fechaActual.getFullYear() - cumple.getFullYear()
+        document.getElementById("text").innerHTML += "Han pasado " + diferenciaAños + " años desde que nací.";
+
+        const diferenciaMilisegundos = fechaActual - cumple;
+        const diasPasados = Math.floor(diferenciaMilisegundos / (1000 * 60 * 60 * 24))
+        console.log("Días que han pasado desde que nací: " + diasPasados)
+
+        const mesesPasados = (fechaActual.getFullYear() - cumple.getFullYear()) * (fechaActual.getMonth() - cumple.getMonth())
+        console.log("Meses que pasaron desde que nací: " + mesesPasados)
+
+        console.log("Han pasado " + diferenciaMilisegundos + " milisegundos desde que nací")
+    </script>
+</body>
+</html>
+

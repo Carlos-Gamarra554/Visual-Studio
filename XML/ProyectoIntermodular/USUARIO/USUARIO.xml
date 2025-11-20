@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE usuario SYSTEM "USUARIO.dtd">
+<usuarios>
+    <usuario>
+        <id>1</id>
+        <nombre>Francisco Jiménez</nombre>
+        <direccion>C/Vicente Blasco Ibáñez, 6</direccion>
+        <telefono>129685732</telefono>
+        <email>fscogim@gmail.com</email>
+        <fregistro>2024-12-4</fregistro>
+    </usuario>
+    <usuario>
+        <id>2</id>
+        <nombre>María Pérez</nombre>
+        <direccion>C/Alcalá, 23</direccion>
+        <telefono>048372657</telefono>
+        <email>marpez@gmail.com</email>
+        <fregistro>2024-01-24</fregistro>
+    </usuario>
+    <usuario>
+        <id>3</id>
+        <nombre>Antonio López</nombre>
+        <direccion>C/Monterreal, 56</direccion>
+        <telefono>912883743</telefono>
+        <email>antlop@gmail.com</email>
+        <fregistro>2024-08-6</fregistro>
+    </usuario>
+</usuarios>

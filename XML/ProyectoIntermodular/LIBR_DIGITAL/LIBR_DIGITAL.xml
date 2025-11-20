@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE libr_digital SYSTEM "LIBR_DIGITAL.dtd">
+<libr_digital>
+    <libro>
+        <cod_libro>1</cod_libro>
+        <ISBN>9783161484100</ISBN>
+        <tamano_archivo>2.5</tamano_archivo>
+    </libro>
+    <libro>
+        <cod_libro>2</cod_libro>
+        <ISBN>9783161484117</ISBN>
+        <tamano_archivo>2.7</tamano_archivo>
+    </libro>
+    <libro>
+        <cod_libro>3</cod_libro>
+        <ISBN>9783161484124</ISBN>
+        <tamano_archivo>1.9</tamano_archivo>
+    </libro>
+    <libro>
+        <cod_libro>4</cod_libro>
+        <ISBN>9783161484131</ISBN>
+        <tamano_archivo>2.3</tamano_archivo>
+    </libro>
+    <libro>
+        <cod_libro>5</cod_libro>
+        <ISBN>9783161484148</ISBN>
+        <tamano_archivo>3.0</tamano_archivo>
+    </libro>
+</libr_digital>

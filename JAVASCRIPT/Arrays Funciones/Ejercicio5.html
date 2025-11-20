@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 5 - Arrays y Funciones</title>
+    </head>
+    <body>
+        <h2>Ejercicio 5 - Arrays y Funciones</h2>
+        <div id="resultado"></div>
+
+        <script>
+            const personas = [
+                {nombre: "Lucía", edad: 25},
+                {nombre: "Carlos", edad: 30},
+                {nombre: "Ana", edad: 22}
+            ];
+
+            const nombresMayus = personas.map(persona => persona.nombre.toUpperCase());
+
+            console.log("Array original:", personas);
+            console.log("Nombres en mayúsculas:", nombresMayus);
+        </script>
+    </body>
+</html>

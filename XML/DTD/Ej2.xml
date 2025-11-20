@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE programming_library SYSTEM "programming_library.dtd">
+<programming_library>
+    <language>
+        <name>Python</name>
+        <creator>Guido van Rossum</creator>
+        <year_created>1991</year_created>
+        <description>Python is a high-level, interpreted, and general-purpose programming language that emphasizes readability with its notable use of significant whitespace.</description>
+    </language>
+    <language>
+        <name>Java</name>
+        <creator>James Gosling</creator>
+        <year_created>1995</year_created>
+        <description>Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.</description>
+    </language>
+    <language>
+        <name>C++</name>
+        <creator>Bjarne Stroustrup</creator>
+        <year_created>1985</year_created>
+        <description>C++ is a general-purpose programming language created as an extension of the C programming language, or «C with Classes».</description>
+    </language>
+</programming_library>

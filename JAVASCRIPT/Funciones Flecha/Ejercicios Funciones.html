@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Parsear números</h2>
+    
+    <script>
+        let num = prompt("Introduce un número:");
+        let num2 = prompt("Introduce otro número:");
+        let operacion = prompt("Elige una opcion (a: sumar, b: multiplicar):");
+
+        function parsearNumeros(num, num2) {
+            let n1 = parseFloat(num);
+            let n2 = parseFloat(num2);
+
+            if (!isNaN(n1) && !isNaN(n2)) {
+                return [n1, n2];
+            } else {
+                return false;
+            }
+        }
+
+        if(parsearNumeros(num, num2)) {
+            const [n1, n2] = parsearNumeros(num, num2);
+            if (operacion === 'a') {
+                console.log("La suma es: " + (n1 + n2));
+            } else if (operacion === 'b') {
+                console.log("La multiplicación es: " + (n1 * n2));
+            } else {
+                console.log("Error: Operación no válida.");
+            }
+        } else {
+            console.log("Error: Uno o ambos valores no son números válidos.");
+        }
+    </script>
+</body>
+</html>

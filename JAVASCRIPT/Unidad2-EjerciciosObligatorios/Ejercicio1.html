@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="puertas"></p>
+    <script>
+        //1. Crea una función constructora llamada Avion.
+        function Avion(numVuelo, motores, flaps){
+            this.numVuelo = numVuelo;
+            this.motores = motores;
+            this.flaps = flaps;
+            this.despegar = function(){
+                this.motores = "encendidos";
+                this.flaps = "extendidos";
+            }
+            this.aterrizar = function(){
+                this.motores = "apagados";
+                this.flaps = "recogidos";
+            }
+        }
+
+        //2. Crea 400 aviones y guárdalos en un array llamado flota.
+        const flota = [];
+
+        for(let i = 1; i <= 400; i++){
+            flota.push(new Avion(i, "apagados", "recogidos"));
+        }
+
+        //3. Añade una propiedad a avion llamada puertaPilotos.
+        Avion.prototype.puertaPilotos = "cerrada";
+
+        //4. Añade también dos métodos para abrir y cerrar la puerta del piloto.
+        Avion.prototype.abrirPuerta = function(){
+            this.puertaPilotos = "abierta";
+        }
+
+        Avion.prototype.cerrarPuerta = function(){
+            this.puertaPilotos = "cerrada";
+        }
+
+        //5. Recorre el array flota y muestra la información en el párrafo
+        function mostrarFlota(flota) {
+            const display = document.getElementById("puertas");
+            display.innerHTML = "";
+            for (const vuelo of flota) {
+                display.innerHTML += `El vuelo nº ${vuelo.numVuelo} tiene los motores ${vuelo.motores} y los flaps ${vuelo.flaps}.<br>`;
+            }
+        }
+        mostrarFlota(flota);
+        
+        //6. Solicita al usuario un número de vuelo a controlar.
+        const numeroVuelo = parseInt(prompt("Introduce un número de vuelo:"));
+
+        //7. Crea una función que reciba el número de vuelo y el array flota como parámetrosy devuelva el vuelo correspondiente.
+        function obtenerVuelo(numVuelo, flota){
+            return flota[numVuelo - 1];
+        }
+
+        //8. Según el vuelo seleccionado, muestra las acciones disponibles.
+        const vueloSeleccionado = obtenerVuelo(numeroVuelo, flota);
+
+        function mostrarAcciones(vueloSeleccionado) {
+        let acciones = "";
+
+        if(vueloSeleccionado.motores === "apagados"){
+            acciones += "a. Despegar\n"
+        } else {
+            acciones += "a. Aterrizar\n"
+        }
+
+        if(vueloSeleccionado.puertaPilotos === "abierta"){
+            acciones += "b. Cerrar puerta pilotos"
+        } else {
+            acciones += "b. Abrir puerta pilotos"
+        }
+        const accion = prompt(acciones)
+
+        if(accion === "a") {
+            if(vueloSeleccionado.motores === "apagados"){
+                vueloSeleccionado.despegar();
+                alert(`El vuelo nº ${vueloSeleccionado.numVuelo} ha despegado.`);
+            } else {
+                vueloSeleccionado.aterrizar();
+                alert(`El vuelo nº ${vueloSeleccionado.numVuelo} ha aterrizado.`);
+            }
+        } else if(accion === "b") {
+            if(vueloSeleccionado.puertaPilotos === "cerrada"){
+                vueloSeleccionado.abrirPuerta();
+                alert(`La puerta del piloto del vuelo nº ${vueloSeleccionado.numVuelo} está abierta.`);
+            } else {
+                vueloSeleccionado.cerrarPuerta();
+                alert(`La puerta del piloto del vuelo nº ${vueloSeleccionado.numVuelo} está cerrada.`);
+            }
+        } else {
+            alert("Acción no válida.");
+        }
+    }
+
+        mostrarAcciones(vueloSeleccionado);
+
+        //9. Recorre el array de la flota y muestra la información.
+        mostrarFlota(flota);
+
+        //10. Vuelve a solicitar al usuario otro número de vuelo hasta que este sea 0.
+        let numero;
+        do {
+            numero = prompt("Introduce otro número de vuelo (0 para salir):");
+            
+            if(numero > flota.length || numero < 0){
+                alert("Número de vuelo no válido.");
+                continue;
+            }
+            mostrarAcciones(obtenerVuelo(parseInt(numero), flota));
+        } while(numero !== 0);
+        mostrarFlota(flota);
+    </script>
+    </body>
+</html>

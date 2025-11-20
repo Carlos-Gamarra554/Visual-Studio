@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Event Delegation Example</title>
+    <meta charset="UTF-8" />
+    <style>
+        table, th, td {
+          border: 1px solid;
+        }
+        </style>
+</head>
+<body>
+    <button id="generator">Soy el creador</button>
+
+    <table>
+        <tbody id="bGenerados">
+        </tbody>
+    </table>
+
+    <script>
+        const table = document.getElementById('bGenerados');
+        const generator = document.getElementById('generator');
+        let contador = 0;
+
+        generator.addEventListener('click', function(event){
+            contador++;
+
+            table.insertAdjacentHTML('beforeend', `<tr>
+                <td>${contador}</td>
+                <td><button class="button">Este botón no estaba antes aquí</button></td>
+            </tr>`)
+        })
+
+        table.addEventListener("click", function(event){
+            if(event.target.classList.contains('button')){
+                alert("Este botón se va a hacer el ARAKIRI");
+                event.target.remove();
+            }
+        })
+    </script>
+</body>
+</html>

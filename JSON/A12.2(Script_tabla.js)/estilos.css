@@ -1,0 +1,22 @@
+* {
+    font-family: Arial;
+}
+
+#data-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#data-container th, td {
+    border: 1px solid darkblue;
+    padding: 10px;
+}
+
+#fila-edad {
+    text-align: center;
+}
+
+#header-nombre, #header-edad {
+    background-color: #f4f4f4;
+}

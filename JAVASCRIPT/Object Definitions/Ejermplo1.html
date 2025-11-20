@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 1</title>
+</head>
+<body>
+    <h1>Ejemplo 1: Definición de Objetos</h1>
+    <p id="demo"></p>
+    <script>
+        const persona = {firstName: "John", lastName: "Doe", age: 25, eyecolor: "azul"};
+
+        persona.estatura = 170;
+        persona.peso = 70;
+
+        document.getElementById("demo").innerHTML = persona.firstName + " " + persona.lastName + " tiene " + persona.age + " años y tiene los ojos de color " + persona.eyecolor + ".<br>" + 
+        "Mide " + persona.estatura + " cm y pesa " + persona.peso + " kg.";
+    </script>
+</body>
+</html>

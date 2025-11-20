@@ -1,0 +1,11 @@
+#Archivo de configuración de docker
+version: '3'
+
+services:
+  web:
+    image: php:7.4-apache
+    ports:
+    #Usamos el puerto 8080 porque el 80 lo usa Xampp
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html

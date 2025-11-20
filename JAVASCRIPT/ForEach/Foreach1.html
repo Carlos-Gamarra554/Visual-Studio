@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        const usuarios = [
+        {
+            nombre: "Juan Pérez",
+            edad: 28,
+            estatura: 1.75,
+            peso: 70,
+            codigoAcceso: null
+        },
+        {
+            nombre: "María Gómez",
+            edad: 34,
+            estatura: 1.62,
+            peso: 58,
+            codigoAcceso: null
+        },
+        {
+            nombre: "Carlos Ruiz",
+            edad: 22,
+            estatura: 1.80,
+            peso: 82,
+            codigoAcceso: null
+        },
+        {
+            nombre: "Ana López",
+            edad: 29,
+            estatura: 1.68,
+            peso: 65,
+            codigoAcceso: null
+        }
+    ];
+
+    for (let i = 0; i < usuarios.length; i++) {
+        const usuario = usuarios[i];
+        const letra1 = usuario.nombre.charAt(0);
+        usuario.codigoAcceso = (usuario.edad + usuario.peso) + letra1;
+        console.log("El código del usuario ", usuario.nombre, " es: ", usuario.codigoAcceso);
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas de Hotel</title>
+</head>
+<body>
+    <h2>Reservas de Habitación</h2>
+    <form action="Ejercicio1.php" method="post">
+        <label for="numero">Número de noches:</label>
+        <input type="number" name="noches" required><br><br>
+
+        <label for="tipo">Tipo de habitación:</label><br><br>
+        <input type="radio" name="tipo" value="I" required>Individual<br>
+        <input type="radio" name="tipo" value="D" required>Doble<br><br>
+        
+        <input type="submit" value="Calcular">
+    </form>
+</body>
+</html>

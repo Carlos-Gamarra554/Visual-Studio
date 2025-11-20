@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Arrays</title>
+</head>
+<body>
+    <h2>Ejercicio 1 - Arrays</h2>
+    <div id="resultado"></div>
+
+    <script>
+        function pideYComprueba() {
+            const numeros = [];
+            let num;
+            do {
+                num = prompt("Introduce números enteros (introduce x para parar):");
+                if (!isNaN(parseInt(num))) {
+                    numeros.push(parseInt(num));
+                }
+            } while (num !== "x" && num !== "X");
+            return numeros;
+        }
+
+        function mitad(array) {
+            for (let i = 0; i < array.length; i++) {
+                array[i] = array[i] / 2;
+            }
+            return array;
+        }
+
+        const numerosArray = pideYComprueba();
+
+        document.getElementById("resultado").innerHTML =
+        "Array original: " + numerosArray.join(", ") + "<br>" +
+        "Mitad de cada número: " + mitad(numerosArray).join(", ");
+    </script>
+</body>
+</html>

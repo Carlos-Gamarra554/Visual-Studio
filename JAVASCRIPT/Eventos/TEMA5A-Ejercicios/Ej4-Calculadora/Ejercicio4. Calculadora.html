@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simple</title>
+    <link rel="stylesheet" href="estilos.css">
+<body>
+    <table>
+        <tr>
+            <td id="resultado" colspan="4"></td>
+        </tr>
+        <tr>
+            <span id="numeros">
+            <td id="n1">7</td>
+            <td id="n2">8</td>
+            <td id="n3">9</td>
+            </span>
+            <td id="division">/</td>
+        </tr>
+        <tr>
+            <span id="numeros">
+            <td id="n4">4</td>
+            <td id="n5">5</td>
+            <td id="n6">6</td>
+            </span>
+            <td id="multiplicar">*</td>
+        </tr>
+        <tr>
+            <span id="numeros">
+            <td id="n7">1</td>
+            <td id="n8">2</td>
+            <td id="n9">3</td>
+            </span>
+            <td id="resta">-</td>
+        </tr>
+        <tr>
+            <td id="borrar"><img src="IconoBorrar.png" height="30px"></td>
+            <span id="numeros">
+            <td id="n0">0</td>
+            </span>
+            <td id="igual">=</td>
+            <td id="suma">+</td>
+        </tr>
+    </table>
+    <script>
+        const resultado = document.getElementById("resultado");
+        let calcuoRealizado = false;
+
+        function borrar() {
+            resultado.innerText = "";
+            calcuoRealizado = false;
+        }
+
+        function mostrarValor(event) {
+            if (calcuoRealizado) {
+                borrar();
+                calcuoRealizado = false;
+            }
+            resultado.innerText += event.target.innerText;
+        }
+
+        function calcular() {
+            try {
+                let valor = eval(resultado.innerText);
+                resultado.innerText = valor;
+                calcuoRealizado = true;
+            } catch (e) {
+                resultado.innerText = "Error";
+                calcuoRealizado = false;
+            }
+        }
+
+        const botonesValor = [
+            "n1", "n2", "n3", "division",
+            "n4", "n5", "n6", "multiplicar",
+            "n7", "n8", "n9", "resta",
+            "n0", "suma"
+        ];
+
+    botonesValor.forEach(id => {
+        document.getElementById(id).addEventListener("click", mostrarValor);
+    });
+
+        document.getElementById("borrar").addEventListener("click", borrar);
+        document.getElementById("igual").addEventListener("click", calcular);
+    </script>
+</body>
+</html>

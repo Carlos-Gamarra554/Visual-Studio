@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Objetos en JavaScript</title>
+</head>
+<body>
+    <script>
+        //Creamos el constructor del objeto Empleado
+        function Empleado(nombre, departamento, salario, añosExperiencia) {
+            this.nombre = nombre;
+            this.departamento = departamento;
+            this.salario = salario;
+            this.añosExperiencia = añosExperiencia;
+        }
+
+        //Añadimos al prototipo del objeto Empleado una descripción
+        Empleado.prototype.descripcion = function() {
+            return `${this.nombre} trabaja en ${this.departamento}, gana ${this.salario}€ y tiene ${this.añosExperiencia} años de experiencia.`;
+        };
+
+        //Añadimos al prototipo del objeto Empleado un método para calcular el nivel profesional
+        Empleado.prototype.nivelProfesional = function() {
+            let nivel = "";
+            if (this.añosExperiencia < 3) {
+                nivel = "Junior";
+            } else if (this.añosExperiencia > 7) {
+                nivel = "Senior";
+            } else {
+                nivel = "Intermedio";
+            }
+            return nivel;
+        };
+
+        //Agregamos un método para ajustar el salario
+        Empleado.prototype.ajustarSalario = function(porcentaje) {
+            this.salario *= (1 + porcentaje/100);
+        };
+
+        //Creamos instancias del objeto Empleado
+        const empleados = [
+            new Empleado("Ana", "Marketing", 30000, 2),
+            new Empleado("Luis", "Desarrollo", 45000, 5),
+            new Empleado("Marta", "Ventas", 60000, 8)
+        ];
+
+        //Mostramos la descripción y nivel profesional de cada empleado
+        empleados.forEach(empleado => {
+            console.log(empleado.descripcion());
+            console.log(`Nivel Profesional: ${empleado.nivelProfesional()}`);
+            console.log('----------------------------------');
+        })
+
+        
+    </script>
+</body> 
+</html>

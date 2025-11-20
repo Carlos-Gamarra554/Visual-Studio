@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript For Of Loop</h2>
+<p>The for of statement loops through the values of any iterable object:</p>
+
+<p id="demo"></p>
+
+<script>
+const cars = ["BMW", "Volvo", "Mini", "Renault", "Seat", "Tesla", "Citroën"];
+
+//Como vemos, sí que se puede hacer con un bucle do/while, aunque no es lo más óptimo.
+//El código se ejecutará aunque el array esté vacío o aunque no se cumpla la condición,
+//lo cual puede provocar errores en el código.
+
+
+let text = "";
+let i = 0;
+
+do {
+  text += cars[i] + "<br>";
+  i++;
+} while (i < cars.length);
+
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>

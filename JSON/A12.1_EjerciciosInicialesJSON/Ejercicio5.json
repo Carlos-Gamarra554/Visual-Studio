@@ -1,0 +1,75 @@
+{
+    "store": {
+      "shelves": [
+        {
+          "category": "Electronics",
+          "items": [
+            {
+              "id": 1,
+              "name": "Smartphone",
+              "price": 500,
+              "material": "Plastic"
+            },
+            {
+              "id": 2,
+              "name": "Laptop",
+              "price": 1200,
+              "material": "Metal"
+            }
+          ]
+        },
+        {
+          "category": "Books",
+          "items": [
+            {
+              "id": 3,
+              "name": "Novel",
+              "price": 20,
+              "material": "Paper"
+            },
+            {
+              "id": 4,
+              "name": "Science Book",
+              "price": 25,
+              "material": "Paper"
+            }
+          ]
+        },
+        {
+          "category": "Clothing",
+          "items": [
+            {
+              "id": 5,
+              "name": "T-shirt",
+              "price": 15,
+              "material": "Cotton"
+            },
+            {
+              "id": 6,
+              "name": "Jeans",
+              "price": 30,
+              "material": "Denim"
+            }
+          ]
+        },
+        {
+          "category": "Toys",
+          "items": [
+            {
+              "id": 7,
+              "name": "Doll",
+              "price": 10,
+              "material": "Plastic"
+            },
+            {
+              "id": 8,
+              "name": "Building Set",
+              "price": 25,
+              "material": "Plastic"
+            }
+          ]
+        }
+      ]
+    }
+  }
+  

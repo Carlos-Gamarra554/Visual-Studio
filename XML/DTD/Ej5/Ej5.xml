@@ -1,0 +1,33 @@
+<? xml version = "1.0" encoding = "UTF-8" ?>
+<!DOCTYPE school SYSTEM "Ej5.dtd">
+<school>
+    <student>
+        <id>a1</id>
+        <name>Juan Pérez</name>
+        <age>22</age>
+        <status>Active</status>
+    </student>
+    <student>
+        <id>a2</id>
+        <name>María González</name>
+        <age>20</age>
+    </student>
+    <student>
+        <id>a3</id>
+        <name>Carlos Rodríguez</name>
+        <age>21</age>
+        <status>Inactive</status>
+    </student>
+    <student>
+        <id>a4</id>
+        <name>Laura Martínez</name>
+        <age>23</age>
+        <status>Graduated</status>
+    </student>
+    <student>
+        <id>a5</id>
+        <name>Andrés López</name>
+        <age>19</age>
+        <status>Active</status>
+    </student>
+</school>

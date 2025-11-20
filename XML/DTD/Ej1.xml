@@ -1,0 +1,29 @@
+<!DOCTYPE eventos [
+<!ELEMENT eventos (evento+)>
+<!ELEMENT evento (titulo, descripcion, fecha, ubicacion, invitados?)>
+<!ELEMENT invitados (invitado*)>
+<!ELEMENT invitado (#PCDATA)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT fecha (#PCDATA)>
+<!ELEMENT ubicacion (#PCDATA)>
+]>
+
+<eventos>
+    <evento>
+        <titulo>Concierto de rock</titulo>
+        <descripcion>Concierto de rock en el estadio de la ciudad</descripcion>
+        <fecha>22-05-2006</fecha>
+        <ubicacion>Estadio Bernabeú</ubicacion>
+        <invitados>
+            <invitado>Carlos Gamarra Tomás</invitado>
+            <invitado>Antonio López García</invitado>
+        </invitados>
+    </evento>
+    <evento>
+        <titulo>Conferencia de tecnología</titulo>
+        <descripcion>Conferencia sobre tecnología en la universidad</descripcion>
+        <fecha>20-12-2022</fecha>
+        <ubicacion>Universidad d'Alacant</ubicacion>
+    </evento>
+</eventos>
