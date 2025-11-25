@@ -1,26 +1,18 @@
 [
-  {
-    "clave": "proyecto1",
-    "titulo": "Página web con PHP",
-    "descripcion": "Creación de una página web HTML e implementado PHP.",
-    "imagen": "static/images/proyecto1.jpg",
-    "fecha": "2025-05-29",
-    "categorias": [1, 4]
-  },
-  {
-    "clave": "proyecto2",
-    "titulo": "Aplicación de reservas",
-    "descripcion": "Se ha realizado una aplicación que permite realizar reservas de habitaciones de hotel.",
-    "imagen": "static/images/proyecto2.jpg",
-    "fecha": "2024-12-24",
-    "categorias": [2, 3]
-  },
-  {
-    "clave": "proyecto3",
-    "titulo": "Implementación de AWS",
-    "descripcion": "Alojamiento de la página web creada en AWS para ahorrar recursos del equipo.",
-    "imagen": "static/images/proyecto3.jpg",
-    "fecha": "2023-01-15",
-    "categorias": [1, 4]
-  }
+    {
+        "clave": "proyecto5",
+        "titulo": "Emprendimiento de una empresa",
+        "descripcion": "Se ha desarrollado un plan de empresa en el que se detalla las características del negocio.",
+        "fecha": "2024-09-01",
+        "categorias": [],
+        "imagen": "static\/images\/692456e794c4a_random.jpg"
+    },
+    {
+        "clave": "proyecto1",
+        "titulo": "Página web desde cero con JavaScript",
+        "descripcion": "Creación de una página web HTML e implementado JavaScript.",
+        "fecha": "2024-05-29",
+        "categorias": [],
+        "imagen": "static\/images\/692459cd7f76b_random.jpg"
+    }
 ]

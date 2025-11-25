@@ -1,10 +1,14 @@
 [
     {
+        "nombre": "Juan Pérez",
+        "dni": "74920855R",
         "email": "admin@portfolio.com",
         "password": "123"
     },
     {
-        "email": "usuario@test.com",
-        "password": "abc"
+        "nombre": "Marcos Fernández López",
+        "dni": "57849209H",
+        "email": "marcos@gmail.com",
+        "password": "1234"
     }
 ]

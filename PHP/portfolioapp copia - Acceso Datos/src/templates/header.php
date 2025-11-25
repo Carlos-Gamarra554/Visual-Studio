@@ -83,6 +83,9 @@
                     <a class="dropdown-item" href="contacto_lista.php">
                         <i class="fa-solid fa-address-book me-2"></i> Lista de Contactos
                     </a>
+                    <a class="dropdown-item" href="usuarios_lista.php">
+                        <i class="fa-solid fa-users me-2"></i> Gestión de Usuarios
+                    </a>
                     <!-- NUEVA OPCIÓN USUARIO -->
                     <a class="dropdown-item" href="usuario.php">
                         <i class="fa-solid fa-user-gear me-2"></i> Mi Perfil (Usuario)
