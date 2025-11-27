@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 10 - Cookies</title>
+        
+    </head>
+    <body>
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" id="name"><br><br>
+        <button type="submit" id="submit">Enviar</button>
+
+        <script>
+            function setCookie(cname, cvalue, exdays) {
+                const d = new Date();
+                d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                let expires = "expires="+ d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+        
+            function getCookie(cname) {
+                let name = cname + "=";
+                let decodedCookie = decodeURIComponent(document.cookie);
+                let ca = decodedCookie.split(';');
+                for(let i = 0; i <ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+
+            const usuarios = ["Carlos"];
+
+            document.getElementById("submit").addEventListener("click", () => {
+                const name = document.getElementById("name").value;
+
+                setCookie("userName", name, 1);
+                const cookieNombre = getCookie("userName");
+
+                if (usuarios.includes(cookieNombre) && cookieNombre !== "") {
+                    alert(`Bienvenido a la página, ${cookieNombre}!`);
+                } else {
+                    usuarios.push(cookieNombre);
+                    alert(`Usuario ${cookieNombre} añadido al sistema.`);
+                }
+
+                document.getElementById("name").value = "";
+            });            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio Marcianitos A</title>
+        
+    </head>
+    <body>
+        <form>
+            <label for="mensaje">Escribir mensaje:</label>
+            <input type="text" name="mensaje" id="mensaje"><br><br>
+            <button type="button" id="enviar">Enviar</button>
+            <p id="demo"></p>
+        </form><br><br>
+
+        <form>
+            <label for="leer">Leer mensaje:</label>
+            <input type="text" name="leer" id="leer"><br><br>
+            <button type="button" id="recibir">Leer</button>
+        </form>
+    </body>
+    <script>
+        function setCookie(cname, cvalue, exdays) {
+                const d = new Date();
+                d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                let expires = "expires="+ d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+        
+            function getCookie(cname) {
+                let name = cname + "=";
+                let decodedCookie = decodeURIComponent(document.cookie);
+                let ca = decodedCookie.split(';');
+                for(let i = 0; i <ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+
+            const botonEnviar = document.getElementById("enviar");
+            const botonLeer = document.getElementById("recibir");
+
+            const inputMensaje = document.getElementById("mensaje");
+            const inputLeer = document.getElementById("leer");
+
+            botonEnviar.addEventListener("click", () => {
+                const mensaje = inputMensaje.value;
+                setCookie("mensaje", mensaje, 365);
+
+                document.getElementById("demo").innerText = "Mensaje enviado!";
+
+                inputMensaje.value = "";
+                inputLeer.value = "";
+            });
+
+            botonLeer.addEventListener("click", () => {
+                const lectura = getCookie("mensaje");
+
+                inputLeer.value = lectura;
+                document.cookie = "mensaje=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            });
+    </script>
+</html>

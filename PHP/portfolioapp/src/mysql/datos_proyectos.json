@@ -53,13 +53,5 @@
             3
         ],
         "imagen": "static\/images\/69245a8ca1020_hola.jpeg"
-    },
-    {
-        "clave": "1",
-        "titulo": "Prueba",
-        "descripcion": "Hola",
-        "fecha": "2006-05-29",
-        "categorias": [],
-        "imagen": "static\/images\/69259f27c402f_hola.jpeg"
     }
 ]
