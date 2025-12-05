@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio Marcianitos C1</title>
+        
+    </head>
+    <body>
+        <form>
+            <label for="mensaje">Escribir mensaje:</label>
+            <input type="text" name="mensaje" id="mensaje"><br><br>
+            <button type="button" id="enviar">Enviar</button>
+        </form><br><br>
+
+        <form>
+            <label for="leer">Leer mensaje:</label>
+            <input type="text" name="leer" id="leer"><br><br>
+            <button type="button" id="recibir">Leer</button>
+        </form>
+    <script>
+            const botonEnviar = document.getElementById("enviar");
+            const botonLeer = document.getElementById("recibir");
+
+            const inputMensaje = document.getElementById("mensaje");
+            const inputLeer = document.getElementById("leer");
+
+            botonEnviar.addEventListener("click", () => {
+                const mensaje = inputMensaje.value;
+                let mensajesGuardados = JSON.parse(localStorage.getItem("mensaje")) || [];
+                mensajesGuardados.push(mensaje);
+
+                localStorage.setItem("mensaje", JSON.stringify(mensajesGuardados));
+                inputMensaje.value = "";
+            });
+
+            botonLeer.addEventListener("click", () => {
+                let mensajesGuardados = JSON.parse(localStorage.getItem("mensaje")) || [];
+                
+                if (mensajesGuardados.length > 0) {
+                    const lectura = mensajesGuardados.shift();
+                    inputLeer.value = lectura;
+                    localStorage.setItem("mensaje", JSON.stringify(mensajesGuardados));
+                } else {
+                    inputLeer.value = "No hay mensajes";
+                }
+            });
+    </script>
+    </body>
+</html>

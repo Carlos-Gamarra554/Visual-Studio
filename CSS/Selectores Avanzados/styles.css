@@ -1,0 +1,17 @@
+h1 + h2 {
+    color: blue;
+}
+
+h1 ~ h2 {
+    color: green;
+}
+
+p[name^="mi"] {
+  font-size: 20px;
+}
+p[name$="mi"] {
+  font-size: 20px;
+}
+p[name*="mi"] {
+  font-size: 20px;
+}

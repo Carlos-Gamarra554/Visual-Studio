@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getDataFromAPI(url, callback) {
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', url);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    callback(this.response);
+                } else {
+                    console.log("Se ha producido un error " + xhr.status + ": " + xhr.statusText);
+                }
+            };
+            xhr.onerror = function () {
+                console.log("Se ha producido un error " + xhr.status + ": " + xhr.statusText);
+            };
+            xhr.send();
+
+        }
+
+        getDataFromAPI('https://jsonplaceholder.typicode.com/users', mostrarDatos);
+
+        function mostrarDatos(data) {
+            // maneja los datos devueltos
+            let datos = JSON.parse(data);
+            for (let i in datos) {
+                if (datos[i].username == "Kamren") console.log(datos[i]);
+            }
+        }
+        
+    </script>
+</body>
+
+</html>

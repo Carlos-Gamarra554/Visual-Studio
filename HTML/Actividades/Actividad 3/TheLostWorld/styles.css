@@ -4,13 +4,24 @@
     box-sizing: border-box;
 }
 
+.group {
+    display: block;
+    clear: both;
+    margin: 0 auto;
+    padding: 25px;
+}
+
 header {
     width: 100%;
     padding: 20px;
 }
 
+.logo {
+    float: left;
+}
+
 h1 em {
-    clear: left;
+    display: block;
 }
 
 header nav {
