@@ -1,7 +1,7 @@
 <?php
 
 public abstract class Producto {
-    public function __construct(private string $nombre, private float $precio) {}
+    public function __construct(protected string $nombre, protected float $precio) {}
 
     public function getNombre(): string {
         return $this->nombre;
