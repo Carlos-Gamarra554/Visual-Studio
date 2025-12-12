@@ -1,6 +1,3 @@
-/* --- 
-    REVISAR CÓDIGO Y CAMBIAR PARA QUE NO PAREZCA DE CHATGPT
---- */
 * {
     margin: 0;
     padding: 0;
@@ -13,8 +10,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 2rem;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #F8F7F2;
     position: sticky;
     top: 0;
 }
@@ -60,7 +56,6 @@
     color: #08090E;
     font-weight: 500;
     font-size: 1rem;
-    transition: color 0.3s ease;
 }
 
 .nav-link:hover, a.contenedor-logo:hover {
@@ -73,12 +68,11 @@
     text-decoration: none;
     border-radius: 4px;
     font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn-primary {
     background-color: #4F7BB2;
-    color: #fff;
+    color: #FFFCFC;
     border: 1px solid #4F7BB2;
 }
 
@@ -88,51 +82,47 @@
 }
 
 .hero-section {
-    background-image: url('img/imagenFondo.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 80vh; /* Ocupa el 80% de la altura de la pantalla */
+    /*Usamos linear-gradient para hacer un degradado de negro con la imagen para que se oscurezca y se lea mejor el texto*/
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('img/imagenFondo.jpg');
+
+    background-size: cover; /*Cubre todo el contenedor independientemente del tamaño de la pantalla*/
+    background-position: center; /*Prioriza el centro de la imagen al recortarla*/
+    height: 80vh; /*SUJETO A CAMBIOS. Ocupa el 80% de la altura de la pantalla*/
     display: flex;
-    align-items: center; /* Centra el contenido verticalmente */
-    padding-left: 5%; /* Alineación a la izquierda */
-    color: #fff;
+    align-items: center;
+    padding-left: 5%;
+    color: #FFFCFC;
     position: relative;
 }
 
-.hero-content h1 {
+.hero-contenido h1 {
     font-size: 3rem;
     line-height: 1.2;
     margin-bottom: 1rem;
     font-weight: 700;
 }
 
-/* Palabras destacadas en dorado (sueños, nosotros) */
-.highlight {
-    color: #eecf6d; /* Color dorado/amarillo */
+.resalto {
+    color: #eecf6d;
     font-family: "Domine", serif;
 }
 
-.hero-subtitle {
+.hero-subtitulo {
     font-size: 0.9rem;
     letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    opacity: 0.9;
+    margin-bottom: 2rem
 }
 
-/* --- Barra de Búsqueda Flotante --- */
-.search-wrapper {
+.buscador-contenedor {
     display: flex;
     justify-content: center;
-    /* Truco: Margen negativo para subir la caja sobre la imagen */
-    margin-top: -3rem; 
+    /*Margen negativo para poner el buscador sobre la imagen*/
+    margin-top: -2.5rem;
     position: relative;
-    z-index: 10;
-    padding: 0 1rem;
 }
 
-.search-bar {
-    background-color: #fff;
+.buscador-barra {
+    background-color: #F8F7F2;
     padding: 1rem 2rem;
     border-radius: 12px;
     display: flex;
@@ -141,45 +131,43 @@
     box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Sombra suave */
 }
 
-.search-item {
+.buscador-item {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-/* Línea divisoria entre elementos */
-.border-left {
+.borde-izquierdo {
     border-left: 1px solid #ddd;
     padding-left: 2rem;
 }
 
-.search-item i {
+.buscador-item i {
     font-size: 1.5rem;
     color: #333;
 }
 
-.search-info {
+.buscador-info {
     display: flex;
     flex-direction: column;
 }
 
-.search-info label {
+.buscador-info label {
     font-size: 0.75rem;
     color: #888;
     font-weight: 600;
 }
 
-.search-info span {
+.buscador-info span {
     font-size: 0.9rem;
     color: #333;
-    font-weight: 700; /* Negrita para los datos */
-    font-family: "Domine", serif; /* Usamos la fuente Domine aquí también */
+    font-weight: 700;
+    font-family: "Domine", serif;
 }
 
-/* Botón azul de la lupa */
-.search-btn {
-    background-color: #5a8bbd; /* Azul similar al de la imagen */
-    color: white;
+.buscador-btn {
+    background-color: #5a8bbd;
+    color: #FFFCFC;
     border: none;
     width: 45px;
     height: 45px;
@@ -189,29 +177,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.3s;
 }
 
-.search-btn:hover {
+.buscador-btn:hover {
     background-color: #3b5d8f;
-}
-
-/* Responsive: Ajuste para móviles */
-@media (max-width: 768px) {
-    .search-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        width: 100%;
-        max-width: 400px;
-    }
-    
-    .border-left {
-        border-left: none;
-        padding-left: 0;
-    }
-    
-    .search-btn {
-        width: 100%; /* Botón ancho completo en móvil */
-    }
 }

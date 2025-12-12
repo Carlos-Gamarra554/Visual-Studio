@@ -1,0 +1,130 @@
+/* --- Sección Hero --- */
+.hero-section {
+    /* Reemplaza 'fondo-piscina.jpg' con tu imagen real */
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('fondo-piscina.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh; /* Ocupa el 80% de la altura de la pantalla */
+    display: flex;
+    align-items: center; /* Centra el contenido verticalmente */
+    padding-left: 5%; /* Alineación a la izquierda */
+    color: #fff;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+/* Palabras destacadas en dorado (sueños, nosotros) */
+.highlight {
+    color: #eecf6d; /* Color dorado/amarillo */
+    font-family: "Domine", serif;
+}
+
+.hero-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* --- Barra de Búsqueda Flotante --- */
+.search-wrapper {
+    display: flex;
+    justify-content: center;
+    /* Truco: Margen negativo para subir la caja sobre la imagen */
+    margin-top: -3rem; 
+    position: relative;
+    z-index: 10;
+    padding: 0 1rem;
+}
+
+.search-bar {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+.search-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Línea divisoria entre elementos */
+.border-left {
+    border-left: 1px solid #ddd;
+    padding-left: 2rem;
+}
+
+.search-item i {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.search-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-info label {
+    font-size: 0.75rem;
+    color: #888;
+    font-weight: 600;
+}
+
+.search-info span {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 700; /* Negrita para los datos */
+    font-family: "Domine", serif; /* Usamos la fuente Domine aquí también */
+}
+
+/* Botón azul de la lupa */
+.search-btn {
+    background-color: #5a8bbd; /* Azul similar al de la imagen */
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.search-btn:hover {
+    background-color: #3b5d8f;
+}
+
+/* Responsive: Ajuste para móviles */
+@media (max-width: 768px) {
+    .search-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .border-left {
+        border-left: none;
+        padding-left: 0;
+    }
+    
+    .search-btn {
+        width: 100%; /* Botón ancho completo en móvil */
+    }
+}
