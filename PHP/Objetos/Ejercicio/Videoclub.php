@@ -1,30 +1,44 @@
 <?php
+require_once 'Cliente.php';
+require_once 'Producto.php';
 
 class Videoclub {
-    public function __construct(private string $nombre, private array $clientes, private array $productos) {}
+    private $nombre;
+    private $productos = [];
+    private $clientes = [];
 
-    public function alquilarProducto($cliente, $producto) {
-        return "El cliente {$cliente->nombre} ha alquilado el producto {$producto->titulo} del videoclub {$this->nombre}.";
+    public function __construct($nombre) {
+        $this->nombre = $nombre;
     }
 
-    agregarProducto($producto) {
-        $this->productos[] += $producto;
+    public function alquilarProducto(Cliente $c, Producto $p) {
+        $c->agregarAlquiler($p);
+        echo $c->getNombre() . " ha alquilado el producto " . $p->getNombre() . ".<br>";
     }
 
-    agregarCliente($cliente) {
-        $this->clientes[] += $cliente;
+    public function agregarProducto(Producto $p) {
+        $this->productos[] = $p; 
     }
 
-    public function getNombre(): string {
-        return $this->nombre;
+    public function agregarCliente(Cliente $c) {
+        $this->clientes[] = $c;
     }
 
-    public function getClientes(): array {
-        return $this->clientes;
+    public function mostrarProductos() {
+        echo "<h3>Catálogo de Productos:</h3>";
+        foreach ($this->productos as $p) {
+            echo "[" . get_class($p) . "] " . $p->getNombre() . ": " . $p->getPrecio() . "€<br>
+            -" . $p->getResumen() . "<br><br>";
+        }
+        echo "<hr>";
     }
-
-    public function getProductos(): array {
-        return $this->productos;
+    
+    public function mostrarClientes() {
+        echo "<h3>Clientes registrados:</h3>";
+        foreach ($this->clientes as $c) {
+            echo "- " . $c->getNombre() . "<br>";
+        }
+        echo "<hr>";
     }
 }
 

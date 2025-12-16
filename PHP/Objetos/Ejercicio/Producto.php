@@ -1,15 +1,23 @@
 <?php
 
-public abstract class Producto {
-    public function __construct(protected string $nombre, protected float $precio) {}
+abstract class Producto {
+    protected $nombre;
+    protected $precio;
 
-    public function getNombre(): string {
+    public function __construct($nombre, $precio) {
+        $this->nombre = $nombre;
+        $this->precio = $precio;
+    }
+
+    public function getNombre() {
         return $this->nombre;
     }
 
-    public function getPrecio(): float {
+    public function getPrecio() {
         return $this->precio;
     }
+
+    abstract public function getResumen();
 }
 
 ?>

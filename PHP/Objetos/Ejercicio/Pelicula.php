@@ -2,8 +2,19 @@
 require_once 'Producto.php';
 
 class Pelicula extends Producto {
-    public function getPrecio() {
-        return 2;
+    private $idioma;
+    private $duracion;
+    private $genero;
+
+    public function __construct($nombre, $idioma, $duracion, $genero) {
+        parent::__construct($nombre, 2);
+        $this->idioma = $idioma;
+        $this->duracion = $duracion;
+        $this->genero = $genero;
+    }
+
+    public function getResumen() {
+        return "Idioma: {$this->idioma}, Duración: {$this->duracion} min, Género: {$this->genero}";
     }
 }
 
