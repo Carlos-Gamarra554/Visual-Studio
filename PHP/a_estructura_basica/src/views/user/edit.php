@@ -20,8 +20,13 @@ if ($user == null) {
     $mostrarForm = false;
 }
 else if (isset($_REQUEST["evento"]) && $_REQUEST["evento"] == "modificar") {
-    $visibilidad = "vibility";
-    $mensaje = "Usuario con id {$id} Modificado con éxito";
+    $visibilidad = "visible";
+    //Actividad 5. Obtenemos el nombre y usuarios desde la URL
+    $nombre = $_REQUEST['nombre'] ?? '';
+    $usuario = $_REQUEST['usuario'] ?? '';
+
+    //Actividad 5. Modificamos el mensaje para que muestre la información extraída del usuario
+    $mensaje = "Usuario {$usuario} con nombre {$nombre} y con id {$id} ha sido modificado con éxito";
     if (isset($_REQUEST["error"])) {
         $mensaje = "No se ha podido modificar el id {$id}";
         $clase = "alert alert-danger";

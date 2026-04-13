@@ -19,12 +19,13 @@ if (isset($_REQUEST["evento"])) {
             $mostrarDatos = true;
             break;
         case "filtrar":
-            $busqueda = ($_REQUEST["busqueda"]) ?? "";
-            $campoSeleccionado = ($_REQUEST["campo"]) ?? "usuario";
-            $metodoSeleccionado = ($_REQUEST["metodo"]) ?? "contiene";
-
-            $users = $controlador->buscar($campoSeleccionado, $metodoSeleccionado, $busqueda);
+            $campo=($_REQUEST["campo"])??"usuario";
+            $metodo=($_REQUEST["metodoBusqueda"])??"contiene";
+            $texto=($_REQUEST["busqueda"])??"";
+            //es borrable Parametro con nombre
+            $users = $controlador->buscar($campo, $metodo, $texto, false);
             break;
+            
         case "borrar":
             $visibilidad = "visibility";
             $mostrarDatos = true;
@@ -108,15 +109,24 @@ if (isset($_REQUEST["evento"])) {
                         echo '<tr><td colspan="6" class="text-center">No se encontraron resultados</td></tr>';
                     } else {
                         foreach ($users as $user) :
-                            $id = $user["id"];
+                            //Actividad 7. Modificamos la tabla para que funcione con objetos
+                            $id = $user->id;
                         ?>
                             <tr>
-                                <th scope="row"><?= $user["id"] ?></th>
-                                <td><?= $user["usuario"] ?></td>
-                                <td><?= $user["name"] ?></td>
-                                <td><?= $user["email"] ?></td>
-                                <td><a class="btn btn-danger" href="index.php?tabla=user&accion=borrar&id=<?= $id ?>"><i class="fa fa-trash"></i> Borrar</a></td>
-                                <td><a class="btn btn-success" href="index.php?tabla=user&accion=editar&id=<?= $id ?>"><i class="fas fa-pencil-alt"></i> Editar</a></td>
+                            <th scope="row"><?=$user->id?></th>
+                            <td><?=$user->usuario?></td>
+                            <td><?=$user->name?></td>
+                            <td><?=$user->email?></td>
+                            <td>
+                                <?php
+                                $disable="";$ruta="index.php?tabla=user&accion=borrar&id={$id}";
+                                if (isset($user->esBorrable) && $user->esBorrable==false){
+                                    
+                                $disable="disabled"; $ruta="#";
+                                }
+                                ?>
+                                <a class="btn btn-danger <?= $disable?>" href="<?=$ruta?>"><i class="fa fa-trash"></i> Borrar</a></td>
+                            <td><a class="btn btn-success" href="index.php?tabla=user&accion=editar&id=<?=$id?>"><i class="fa fa-pencil"></i>Editar</a></td>
                             </tr>
                         <?php
                         endforeach;

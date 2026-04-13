@@ -1,0 +1,27 @@
+.hero-habitaciones {
+    height: 50vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/habitacion1.jpg');
+}
+
+.hero-contacto {
+    height: 40vh;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/imagenFondo.jpg');
+}
+
+.precio-habitacion {
+    color: #1A2B49;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+.btn-reservar {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.desc-habitacion {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}

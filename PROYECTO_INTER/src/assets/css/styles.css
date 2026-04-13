@@ -1,0 +1,523 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Domine", serif;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    background-color: #F8F7F2;
+    top: 0;
+}
+
+.contenedor-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+    margin-left: 5%;
+}
+
+.texto-logo {
+    color: #4F7BB2;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo {
+    height: 70px;
+    width: auto;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.lista-nav {
+    list-style: none;
+    display: flex;
+    margin-right: 3rem;
+}
+
+.lista-nav li {
+    margin-left: 3rem;
+    display: inline-block;
+}
+
+.nav-link, a.contenedor-logo{
+    text-decoration: none;
+    color: #08090E;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.nav-link:hover, a.contenedor-logo:hover {
+    color: #4F7BB2;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: #4F7BB2;
+    color: #FFFCFC;
+    border: 1px solid #4F7BB2;
+}
+
+.btn-primary:hover {
+    background-color: #2c6ab6;
+    border-color: #2c6ab6;
+}
+
+.hero-section {
+    /*Usamos linear-gradient para hacer un degradado de negro con la imagen para que se oscurezca y se lea mejor el texto*/
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/imagenFondo.jpg');
+
+    background-size: cover; /*Cubre todo el contenedor independientemente del tamaño de la pantalla*/
+    background-position: center; /*Prioriza el centro de la imagen al recortarla*/
+    height: 80vh; /*Ocupa el 80% de la altura del contenedor*/
+    display: flex;
+    align-items: center;
+    padding-left: 7.5%;
+    color: #FFFCFC;
+    position: relative;
+}
+
+.hero-contenido h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.resalto {
+    color: #eecf6d;
+    font-family: "Domine", serif;
+}
+
+.hero-subtitulo {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+}
+
+.buscador-contenedor {
+    display: flex;
+    justify-content: center;
+    /*Margen negativo para poner el buscador sobre la imagen*/
+    margin-top: -2.5rem;
+    position: relative;
+}
+
+.buscador-barra {
+    background-color: #F8F7F2;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.buscador-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.borde-izquierdo {
+    border-left: 1px solid #ddd;
+    padding-left: 2rem;
+}
+
+.buscador-item i {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.buscador-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.buscador-info label {
+    font-size: 0.75rem;
+    color: #888;
+    font-weight: 600;
+}
+
+.buscador-info span {
+    font-size: 0.9rem;
+    color: #08090E;
+    font-weight: 700;
+    font-family: "Domine", serif;
+}
+
+.buscador-btn {
+    background-color: #5a8bbd;
+    color: #FFFCFC;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buscador-btn:hover {
+    background-color: #3b5d8f;
+}
+
+.sobre-nosotros {
+    background-color: #F8F7F2;
+    padding: 6rem 2rem 5rem;
+}
+
+.sobre-nosotros-contenedor {
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+.sobre-nosotros-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+.sobre-nosotros-titulo h2 {
+    font-family: "Domine", serif;
+    font-size: 2.5rem;
+    line-height: 1.1;
+    color: #08090E;
+}
+
+.sobre-nosotros-contenido {
+    max-width: 62%;
+    text-align: justify;
+}
+
+.sobre-nosotros-subtitulo {
+    color: #616465;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.sobre-nosotros-descripcion {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #08090E;
+    font-family: "Domine", serif;
+}
+
+.saber-mas {
+    text-decoration: none;
+    color: #08090E;
+    font-weight: bold;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5%;
+}
+
+.habitaciones-section {
+    padding: 2rem 10rem;
+    background-color: #F8F7F2;
+}
+
+.habitaciones-titulo {
+    text-align: center;
+    font-family: "Domine", serif;
+    font-size: 2rem;
+    color: #08090E;
+    margin-bottom: 3rem;
+}
+
+.habitaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem;
+}
+
+.imagen-habitacion img {
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+}
+
+.info-habitacion {
+    padding-top: 1rem;
+}
+
+.info-habitacion h3 {
+    font-family: "Domine", serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #08090E;
+}
+
+.detalles-habitacion {
+    display: flex;
+    gap: 1.5rem; 
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.detalles-habitacion span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.estadisticas-section {
+    padding: 5rem 8rem;
+    background-color: #F8F7F2;
+}
+
+.estadisticas-titulo {
+    font-family: "Domine", serif;
+    font-size: 2rem;
+    color: #08090E;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.estadisticas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.tarjeta-estadisticas {
+    background-color: #e6e6e6;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+}
+
+.estadisticas-numero {
+    font-family: "Domine", serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #08090E;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.mas {
+    color: #eecf6d;
+    margin-left: 5px;
+}
+
+.tarjeta-estadisticas h3 {
+    font-family: "Domine", serif;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.tarjeta-estadisticas p {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.estadisticas-btn {
+    text-align: center;
+}
+
+.btn-oro {
+    background-color: #eecf6d;
+    color: #FFFCFC;
+    padding: 1rem 2.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-oro:hover {
+    background-color: #d4b550;
+}
+
+.seccion-faqs {
+    background-color: #F8F7F2;
+    padding: 1rem 2.5rem;
+    text-align: center;
+    font-family: "Domine", serif;
+}
+
+.seccion-faqs h2 {
+    color: #08090E;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.faq-tarjeta {
+    width: 100%;
+    max-width: 65%;
+    margin: 0 auto 1.5rem;
+    border: 1px solid #DDD;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.faq-tarjeta summary {
+    padding: 20px;
+    font-weight: bold;
+    color: #08090E;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icono {
+    color: #C5A47E;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.faq-tarjeta p {
+    padding: 0 1rem 1rem;
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+.seccion-testimonios {
+    background-color: #F8F7F2;
+    padding: 5rem 2rem;
+    text-align: center;
+    font-family: "Domine", serif;
+}
+
+.seccion-testimonios h2 {
+    color: #08090E;
+    font-family: "Domine", serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contenedor-testimonios {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 75%;
+    margin: 0 auto 2.5rem;
+}
+
+.tarjeta-testimonio {
+    flex: 1;
+    min-width: 300px;
+    padding: 2rem;
+    border: 1px solid #DDD;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.texto-opinion {
+    color: #555555;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.cliente-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.foto-cliente {
+    width: 50px;
+    height: 50px;
+    background-color: #cccccc;
+    border-radius: 50%;
+}
+
+.foto-cliente img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.datos-cliente strong {
+    display: block;
+    color: #08090E;
+}
+
+.datos-cliente span {
+    font-size: 14px;
+    color: #888888;
+}
+
+.texto-centrado {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.texto-descripcion {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Estilos Perfil y Show */
+.seccion-perfil {
+    padding: 4rem 2rem;
+    background-color: #F8F7F2;
+    min-height: 80vh;
+}
+.contenedor-perfil {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.titulo-perfil {
+    font-size: 2.5rem;
+    color: #08090E;
+    margin-bottom: 2rem;
+    font-family: "Domine", serif;
+}
+.tarjeta-perfil {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.titulo-tarjeta {
+    font-size: 1.5rem;
+    color: #4F7BB2;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+.grid-datos {
+    display: grid;
+    gap: 1.5rem;
+}
+.etiqueta-dato {
+    display: block;
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+.valor-dato {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 500;
+}

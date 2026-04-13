@@ -1,0 +1,96 @@
+.crear {
+    padding: 30px 0;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.crear__titulo {
+    font-size: 2em;
+}
+
+.form {
+   margin: 20px 0 0;
+}
+
+.form__item {
+    padding: 10px 0 15px;
+}
+
+.form__item--boton {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__label {
+    margin: 0 0 10px 0;
+}
+
+.form__input {
+    height: 5px;
+    padding: 25px;
+    width: 100%;
+    border: none;
+    background-color: var(--menu-color);
+    margin: 4px 0 0 0;
+    box-sizing: border-box;
+}
+
+.form__input:focus {
+    accent-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
+}
+
+.form__input--checkbox {
+    height: 15px;
+    width: auto;
+    margin: 0 10px 0 0;
+    accent-color: var(--primary-color);
+}
+
+.form__input--textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.boton {
+    border: none;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    font-family: var(--current-font);
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 20px 0 0;
+    align-self: center;
+    color: var(--secondary-color);
+}
+
+.boton:hover, .boton:active {
+    transform: scale(0.98); 
+    box-shadow: inset 3px 2px 22px 1px rgba(0, 0, 0, 0.3); 
+}
+
+.boton--aceptar {
+    background-color: var(--success-color);
+}
+
+.boton--cancelar {
+    background-color: var(--danger-color);
+}
+
+.boton--volver {
+    background-color: var(--primary-color);
+}
+
+
+/* Media queries */
+
+@media (max-width: 756px) {
+    .crear {
+        width: 95%;
+    }
+
+    .boton {
+        display: block;
+        margin: 0 auto 10px;
+    }
+}

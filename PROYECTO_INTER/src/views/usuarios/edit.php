@@ -1,0 +1,78 @@
+<?php
+require_once "controllers/usersController.php";
+//recoger datos
+if (!isset($_REQUEST["id"])) {
+    header('location:index.php?accion=listar');
+    exit();
+}
+$id = $_REQUEST["id"];
+$controlador = new UsersController();
+$user = $controlador->ver($id);
+
+$visibilidad = "hidden";
+$mensaje = "";
+$clase = "alert alert-success";
+$mostrarForm = true;
+if ($user == null) {
+    $visibilidad = "visbility";
+    $mensaje = "El usuario con id: {$id} no existe. Por favor vuelva a la pagina anterior";
+    $clase = "alert alert-danger";
+    $mostrarForm = false;
+}
+else if (isset($_REQUEST["evento"]) && $_REQUEST["evento"] == "modificar") {
+    $visibilidad = "visible";
+    //Actividad 5. Obtenemos el nombre y usuarios desde la URL
+    $nombre = $_REQUEST['nombre'] ?? '';
+    $usuario = $_REQUEST['usuario'] ?? '';
+
+    //Actividad 5. Modificamos el mensaje para que muestre la información extraída del usuario
+    $mensaje = "Usuario {$usuario} con nombre {$nombre} y con id {$id} ha sido modificado con éxito";
+    if (isset($_REQUEST["error"])) {
+        $mensaje = "No se ha podido modificar el id {$id}";
+        $clase = "alert alert-danger";
+    }
+}
+?>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h3">Editar Usuario con Id: <?= $id ?></h1>
+    </div>
+    <div id="contenido">
+        <div id="msg" name="msg" class="<?= $clase ?>" <?= $visibilidad ?>> <?= $mensaje ?> </div>
+        <?php
+        if ($mostrarForm) {
+        ?>
+            <form action="index.php?tabla=usuarios&accion=guardar&evento=modificar" method="POST">
+                <input type="hidden" name="id" value="<?= $user->id ?>">
+                <input type="hidden" name="idOriginal" value="<?= $user->id ?>">
+                <input type="hidden" name="emailOriginal" value="<?= $user->email ?>">
+
+                <div class="form-group">
+                    <label for="usuario">Usuario </label>
+                    <input type="text" required class="form-control" id="usuario" name="usuario" aria-describedby="usuario" value="<?= $user->usuario ?>">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" required class="form-control" id="password" name="password" value="<?= $user->password ?>">
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre </label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" value="<?= $user->name ?>">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email </label>
+                    <input type="text" class="form-control" id="email" name="email" value="<?= $user->email ?>">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a class="btn btn-danger" href="index.php?tabla=user&accion=listar">Cancelar</a>
+            </form>
+        <?php
+        } else {
+        ?>
+            <a href="index.php" class="btn btn-primary">Volver a Inicio</a>
+        <?php
+        }
+        ?>
+    </div>
+</main>

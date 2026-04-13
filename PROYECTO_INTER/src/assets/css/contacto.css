@@ -1,0 +1,49 @@
+.seccion-contacto {
+    padding: 5rem 2rem;
+    background-color: #F8F7F2;
+}
+
+.contenedor-contacto {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.columna-info, .columna-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.titulo-contacto {
+    font-family: 'Domine', serif;
+    color: #1A2B49;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.bloque-dato {
+    margin-bottom: 1.5rem;
+}
+
+.bloque-dato h4 {
+    color: #1A2B49;
+    margin-bottom: 0.5rem;
+}
+
+.tarjeta-contacto {
+    padding: 2rem;
+    text-align: left;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+.input-contacto, .textarea-contacto {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #DDD;
+    border-radius: 8px;
+    font-family: sans-serif;
+}

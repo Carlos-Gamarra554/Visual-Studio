@@ -1,0 +1,44 @@
+{
+  "libros": [
+    {
+      "id": "2ad6b5e2-9c2b-4959-b740-9335c85eed74",
+      "titulo": "1984",
+      "autor": "George Orwell",
+      "portada": "https://imagessl4.casadellibro.com/a/l/t7/44/9788499890944.jpg",
+      "completado": true,
+      "sinopsis": "La historia comienza en el año 1984 en una sociedad inglesa dominada por un sistema de colectivismo burocrático controlado por el Gran Hermano. Un funcionario del Ministerio de la Verdad, Winston Smith, tratará de rebelarse contra ese control, manipulación y autoritarismo. Su trabajo consiste en (re)escribir la historia de forma que siempre coincida con los ideales e intereses del partido único. Por eso, también se encarga de hacer desaparecer los diarios y archivos que los pongan en duda, así como los nombres de aquellos en contra del régimen. No obstante, conserva un diario en el que expresa sus dudas y sentimientos hacia el gobierno."
+    },
+    {
+      "id": "9bbf84ae-20bc-4477-89c9-eab36ac417dd",
+      "titulo": "¿Sueñan los androides con ovejas eléctricas?",
+      "autor": "Phillip K. Dick",
+      "portada": "https://imagessl7.casadellibro.com/a/l/t7/57/9788445006757.jpg",
+      "completado": true,
+      "sinopsis": "La célebre Blade Runner protagonizada por Harrison Ford está inspirada en esta novela de Phillip K. Dick ambientada en el año 2021, cuando la guerra mundial ha exterminado a millones de personas. Los recursos son cada vez más limitados y los supervivientes tratan de conseguir cualquier animal vivo para alimentarse, pero aquellos que no pueden permitirse pagar por ellos se ven obligados a adquirir réplicas increíblemente realistas. Las empresas llegan incluso a fabricar seres humanos artificiales tan perfectos que empiezan a albergar sentimientos y a sufrir su opresión. Rick Deckard, el protagonista, es un cazarrecompensas que debe encontrar androides rebeldes y retirarlos. Todo se complicará cuando tenga que enfrentarse a los nuevos modelos Nexus-6, prácticamente indistinguibles de los seres humanos."
+    },
+    {
+      "id": "85f06643-f095-4a85-9d93-b9a78eb42e39",
+      "titulo": "Dune",
+      "autor": "Frank Herbert",
+      "portada": "https://imagessl9.casadellibro.com/a/l/t7/79/9788466353779.jpg",
+      "completado": false,
+      "sinopsis": "La última adaptación cinematográfica protagonizada por Timothée Chalamet ha rescatado este clásico de la ciencia ficción que ya había llevado a la pantalla David Lynch en los años 80. En el desértico planeta Arrakis, el agua escasea y es el bien más preciado. Sin embargo, ese territorio tiene una gran importancia estratégica para el Emperador, las Grandes Casas y la Cofradía, los tres grandes poderes de la galaxia, pues es el único lugar conocido en el que se produce la melange, una especia con unas propiedades únicas. Al duque Leto Atreides se le asigna la gobernanza de Arrakis, habitado por los Fremen y monstruosos gusanos de arena de centenares de metros de longitud. Sin embargo, cuando los Atreides son traicionados, su hijo y heredero, Paul, emprenderá un viaje hacia un destino más grande de lo que jamás hubiera imaginado."
+    },
+    {
+      "id": "55d91e87-688a-4970-aa3d-c4f01304409a",
+      "titulo": "Un mundo feliz",
+      "autor": "Aldous Huxley",
+      "portada": "https://imagessl7.casadellibro.com/a/l/t7/57/9788497594257.jpg",
+      "completado": false,
+      "sinopsis": "En ese mundo huxleisiano han triunfado el capitalismo, el consumo y la comodidad. Los humanos ya no procrean, los habitantes se crean in vitro en auténticas cadenas de montaje, el sexo se ha convertido solo en una diversión y el amor en algo extraño. Las letras del alfabeto griego clasifican a los seres humanos por castas y todo el mundo acepta su lugar en la nueva jerarquía social. El soma, la droga por excelencia, ayuda a los habitantes a escapar de la rutina donde la libertad de expresión y el pensamiento crítico han sido erradicados. Bernard Marx, el protagonista, deberá probar los límites de la sociedad distópica que lo ha engendrado."
+    },
+    {
+      "id": "b95e5718-3227-48e4-87c3-82975a411056",
+      "titulo": "El juego de Ender",
+      "autor": "Orson Scott Card",
+      "portada": "https://imagessl3.casadellibro.com/a/l/t7/93/9788420434193.jpg",
+      "completado": false,
+      "sinopsis": "Un texto en el que se percibe la influencia de Huxley y Wells en su autor, Orson Scott Card. La Tierra se ve amenazada por una raza extraterrestre, los Insectores, capaces de comunicarse telepáticamente. Para derrotarlos es necesario una nueva clase de genio militar, por lo que se ha hecho una excepción y se ha permitido el nacimiento de Ender. En este mundo, se ha limitado a dos el número de descendientes y Ender es un tercer hijo. Este niño aprenderá todo lo relativo a la guerra en los videojuegos y en los peligrosos ensayos de batallas espaciales que realiza con sus compañeros."
+    }
+  ]
+}

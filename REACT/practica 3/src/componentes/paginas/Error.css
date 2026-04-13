@@ -1,0 +1,19 @@
+.error {
+    padding: 30px 0;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.error__titulo {
+    font-size: 2em;
+}
+
+
+/* Media queries */
+
+@media (max-width: 756px) {
+    .error {
+        width: 95%;
+        text-align: center;
+    }
+}

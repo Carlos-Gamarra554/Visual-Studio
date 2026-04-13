@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  vite:
+    image: node:20
+    container_name: react_vite_dev
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "5173:5173"
+    command: npm run dev -- --host

@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Domine", serif;
+}
+
+.body-login {
+    background-color: #F8F7F2;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+.logo-login {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    margin-bottom: 2rem;
+    color: #4F7BB2;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.logo-img-login {
+    height: 50px;
+    width: auto;
+}
+
+.tarjeta-login {
+    background-color: white;
+    width: 100%;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.tarjeta-login h2 {
+    color: #08090E;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.subtitulo-login {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.campo-input {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.campo-input label {
+    display: block;
+    font-size: 0.85rem;
+    color: #08090E;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-con-icono {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-con-icono i {
+    position: absolute;
+    left: 15px;
+    color: #888;
+    font-size: 1.2rem;
+}
+
+.input-con-icono input {
+    width: 100%;
+    padding: 12px 12px 12px 45px;
+    border: 1px solid #DDD;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+    background-color: #FAFAFA;
+}
+
+.input-con-icono input:focus {
+    border-color: #4F7BB2;
+    background-color: #FFF;
+}
+
+.opciones-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.opciones-login a {
+    color: #4F7BB2;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #5a8bbd;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #4F7BB2;
+}
+
+.pie-login {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.pie-login a {
+    color: #eecf6d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-volver {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #4F7BB2;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.btn-volver i {
+    font-size: 1.5rem;
+}
+
+.btn-volver:hover {
+    color: #08090E;
+    transform: translateX(-5px);
+}
+
+@media (max-width: 500px) {
+    .btn-volver {
+        top: 1rem;
+        left: 1rem;
+    }
+}

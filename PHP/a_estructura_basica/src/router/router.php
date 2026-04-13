@@ -1,18 +1,14 @@
 <?php
-
 function router (){
     $url = $_SERVER["REQUEST_URI"];
 
-// si pongo sólo la barra asumo que es ruta por defecto
+    // Rutas base
     if (substr ($url,-1)=="/") return "views/inicio.php";
-
-    if (!strpos ($url,"index.php"))return"views/404.php";
-
-// si hay index y no hay tabla Vista por defecto
+    if (!strpos ($url,"index.php")) return "views/404.php";
     if (!isset ($_REQUEST["tabla"])) return "views/inicio.php";
 
     $tablas=[
-        "user"=>[//defino las acciones permitidas para esa tabla
+        "user"=>[
             "crear"=>"create.php",
             "guardar"=>"store.php",
             "ver"=> "show.php",
@@ -20,19 +16,40 @@ function router (){
             "buscar"=>"search.php",
             "borrar"=>"delete.php",
             "editar"=>"edit.php"
-    ],
-    ];
-    $tabla= $_REQUEST["tabla"];
-    if (!isset($tablas[$tabla])) return"views/404.php"; 
+        ],
+        "client" => [
+            "crear" => "create.php",
+            "guardar" => "store.php",
+            "ver" => "show.php",
+            "listar" => "list.php",
+            "borrar" => "delete.php",
+            "editar" => "edit.php",
+            "buscar" => "search.php"
+        ],
 
-    // si no hay accion definimos por defecto la accion listar
-    if (!isset ($_REQUEST["accion"])) return "views/{$tabla}/list.php";
-    // Si la acción no está permitda
-    $accion=$_REQUEST["accion"];
-    if (!isset($tablas[$tabla][$accion]) ) return"views/404.php"; 
+        "auth" => [
+            "login" => "auth/login.php",
+            "validar" => "auth/validate.php",
+            "logout" => "auth/logout.php"
+        ]
+    ];
+
+    $tabla = $_REQUEST["tabla"];
+    if (!isset($tablas[$tabla])) return "views/404.php"; 
+
+    // Acción por defecto
+    if (!isset ($_REQUEST["accion"])) {
+        if ($tabla == 'auth') return "views/auth/login.php";
+        return "views/{$tabla}/list.php";
+    }
+
+    $accion = $_REQUEST["accion"];
+    if (!isset($tablas[$tabla][$accion])) return "views/404.php"; 
    
-    // Por ejemplo si recibo la tabla=user y accion= listar
-    // esto llamará a la vista
-    // views/user/list.php dentro del require
+    if ($tabla == 'auth') {
+        return "views/{$tablas[$tabla][$accion]}";
+    }
+    
     return "views/{$tabla}/{$tablas[$tabla][$accion]}";
 }
+?>

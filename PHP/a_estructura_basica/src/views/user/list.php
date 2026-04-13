@@ -7,8 +7,9 @@ $visibilidad = "hidden";
 if (isset($_REQUEST["evento"]) && $_REQUEST["evento"] == "borrar") {
     $visibilidad = "visibility";
     $clase = "alert alert-success";
-    //Mejorar y poner el nombre/usuario
-    $mensaje = "El usuario con id: {$_REQUEST['id']} Borrado correctamente";
+    //Actividad 4. Obtener el nombre del usuario borrado desde la URL
+    $nombreBorrado = $_REQUEST['nombre'] ?? 'Usuario';
+    $mensaje = "El usuario {$nombreBorrado} con id: {$_REQUEST['id']} ha sido borrado correctamente";
     if (isset($_REQUEST["error"])) {
         $clase = "alert alert-danger ";
         $mensaje = "ERROR!!! No se ha podido borrar el usuario con id: {$_REQUEST['id']}";
@@ -43,13 +44,14 @@ if (isset($_REQUEST["evento"]) && $_REQUEST["evento"] == "borrar") {
                     </thead>
                     <tbody>
                         <?php foreach ($users as $user) :
-                            $id = $user["id"];
+                            //Actividad 7. Modificamos la tabla para que funcione con objetos
+                            $id = $user->id;
                         ?>
                             <tr>
-                                <th scope="row"><?= $user["id"] ?></th>
-                                <td><?= $user["usuario"] ?></td>
-                                <td><?= $user["name"] ?></td>
-                                <td><?= $user["email"] ?></td>
+                                <th scope="row"><?= $user->id ?></th>
+                                <td><?= $user->usuario ?></td>
+                                <td><?= $user->name ?></td>
+                                <td><?= $user->email ?></td>
                                 <td><a class="btn btn-danger" href="index.php?tabla=user&accion=borrar&id=<?= $id ?>"><i class="fa fa-trash"></i> Borrar</a></td>
                                 <td><a class="btn btn-success" href="index.php?tabla=user&accion=editar&id=<?= $id ?>"><i class="fas fa-pencil-alt"></i> Editar</a></td>
                             </tr>

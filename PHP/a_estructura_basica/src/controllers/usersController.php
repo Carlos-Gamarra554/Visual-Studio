@@ -1,5 +1,6 @@
 <?php
 require_once "models/userModel.php";
+require_once "assets/php/funciones.php";
 
 class UsersController { 
     private $model;
@@ -8,10 +9,57 @@ class UsersController {
         $this->model = new UserModel();
     }
 
-    public function crear (array $arrayUser):void {
-        $id=$this->model->insert ($arrayUser);
-        ($id==null)?header("location:index.php?tabla=user&accion=crear&error=true&id={$id}"): header("location:index.php?tabla=user&accion=ver&id=".$id);
-        exit ();
+    public function crear(array $arrayUser): void
+    {
+        $error = false;
+        $errores = [];
+    //vaciamos los posibles errores
+        $_SESSION["errores"] = [];
+        $_SESSION["datos"] = [];
+
+        // ERRORES DE TIPO
+        if (!is_valid_email($arrayUser["email"])) {
+            $error = true;
+           $errores["email"][] = "El email tiene un formato incorrecto";
+        }
+        
+        //campos NO VACIOS
+        $arrayNoNulos = ["email", "password", "usuario"];
+        $nulos = HayNulos($arrayNoNulos, $arrayUser);
+        if (count($nulos) > 0) {
+            $error = true;
+            for ($i = 0; $i < count($nulos); $i++) {
+                $errores[$nulos[$i]][] = "El campo {$nulos[$i]} es nulo";
+            }
+        }
+
+        //CAMPOS UNICOS
+        $arrayUnicos = ["email", "usuario"];
+
+        foreach ($arrayUnicos as $CampoUnico) {
+            if ($this->model->exists($CampoUnico, $arrayUser[$CampoUnico])) {
+                $errores[$CampoUnico][] = "El {$arrayUser[$CampoUnico]} de {$CampoUnico} ya existe";
+                $error = true;
+            }
+        }
+
+        $id = null;
+        if (!$error) {
+            $arrayUser["password"] = password_hash($arrayUser["password"], PASSWORD_DEFAULT);
+            $id = $this->model->insert($arrayUser);
+        }
+
+        if ($id == null) {
+            $_SESSION["errores"] = $errores;
+            $_SESSION["datos"] = $arrayUser;
+            header("location:index.php?accion=crear&tabla=user&error=true&id={$id}");
+                exit ();
+        } else {
+            unset($_SESSION["errores"]);
+            unset($_SESSION["datos"]);
+            header("location:index.php?accion=ver&tabla=user&id=" . $id);
+            exit ();
+        }
     }
 
     public function ver(int $id): ?stdClass {
@@ -23,27 +71,98 @@ class UsersController {
    }
 
    public function borrar(int $id): void {
+    //Actividad 4. Obtener el nombre del usuario antes de borrarlo
+    $usuarioAEliminar = $this->model->read($id);
+    $nombre = $usuarioAEliminar ? $usuarioAEliminar->name : "Desconocido";
+
     $borrado = $this->model->delete($id);
-    $redireccion = "location:index.php?accion=listar&tabla=user&evento=borrar&id={$id}";
+    //Pasamos el nombre a la URL
+    $redireccion = "location:index.php?accion=listar&tabla=user&evento=borrar&id={$id}&nombre={$nombre}";
     
     if ($borrado == false) $redireccion .=  "&error=true";
     header($redireccion);
     exit();
 }
 
-public function editar (int $id, array $arrayUser):void {
-    $editadoCorrectamente=$this->model->edit ($id, $arrayUser);
-    //lo separo para que se lea mejor en el word
-    $redireccion="location:index.php?tabla=user&accion=editar";
-    $redireccion.="&evento=modificar&id={$id}";
-    $redireccion.=($editadoCorrectamente==false)?"&error=true":"";
+public function editar(string $id, array $arrayUser): void
+{
+    $error = false;
+    $errores = [];
+    if (isset($_SESSION["errores"])) {
+        unset($_SESSION["errores"]);
+        unset($_SESSION["datos"]);
+    }
+
+    // ERRORES DE TIPO
+    if (!is_valid_email($arrayUser["email"])) {
+        $error = true;
+        $errores["email"][] = "El email tiene un formato incorrecto";
+    }
+
+    //campos NO VACIOS
+    $arrayNoNulos = ["email", "password", "usuario"];
+    $nulos = HayNulos($arrayNoNulos, $arrayUser);
+    if (count($nulos) > 0) {
+        $error = true;
+        for ($i = 0; $i < count($nulos); $i++) {
+            $errores[$nulos[$i]][] = "El campo {$nulos[$i]} NO puede estar vacio ";
+        }
+    }
+    
+    //CAMPOS UNICOS
+    $arrayUnicos = [];
+    if ($arrayUser["email"] != $arrayUser["emailOriginal"]) $arrayUnicos[] = "email";
+    if ($arrayUser["usuario"] != $arrayUser["usuarioOriginal"]) $arrayUnicos[] = "usuario";
+
+    foreach ($arrayUnicos as $CampoUnico) {
+        if ($this->model->exists($CampoUnico, $arrayUser[$CampoUnico])) {
+            $errores[$CampoUnico][] = "El {$CampoUnico}  {$arrayUser[$CampoUnico]}  ya existe";
+            $error = true;
+        }
+    }
+
+    //todo correcto
+    $editado = false;
+    if (!$error) $editado = $this->model->edit($id, $arrayUser);
+
+    if ($editado == false) {
+        $_SESSION["errores"] = $errores;
+        $_SESSION["datos"] = $arrayUser;
+        $redireccion = "location:index.php?accion=editar&tabla=user&evento=modificar&id={$id}&error=true";
+    } else {
+        //vuelvo a limpiar por si acaso
+        unset($_SESSION["errores"]);
+        unset($_SESSION["datos"]);
+        //este es el nuevo numpieza
+        $id = $arrayUser["id"];
+        $redireccion = "location:index.php?accion=editar&tabla=user&evento=modificar&id={$id}";
+    }
+    header($redireccion);
+    exit ();
     //vuelvo a la pagina donde estaba
-    header ($redireccion);
-    exit();
 }
 
-    public function buscar (string $campo, string $metodo, string $dato): array {
-        return $this->model->search ($campo, $metodo, $dato);
-     }
+    public function buscar(string $campo = "usuario", string $metodo = "contiene", string $texto = "", bool  $comprobarSiEsBorrable = false): array
+{
+    $users = $this->model->search($campo, $metodo, $texto);
+
+    if ($comprobarSiEsBorrable) {
+        foreach ($users as $user) {
+            $user->esBorrable = $this->esBorrable($user);
+        }
+    }
+    return $users;
+}
+
+private function esBorrable(stdClass $user): bool
+{
+    $projectController = new ProjectsController();
+    $borrable = true;
+    // si ese usuario está en algún proyecto, No se puede borrar.
+    if (count($projectController->buscar("user_id", "igual", $user->id)) > 0)
+        $borrable = false;
+
+    return $borrable;
+}
 
 }

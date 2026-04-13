@@ -1,0 +1,96 @@
+.seccion-perfil {
+    background-color: #F8F7F2;
+    min-height: 80vh;
+    padding: 4rem 2rem;
+}
+
+.contenedor-perfil {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cabecera-perfil {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.titulo-perfil {
+    font-family: 'Domine', serif;
+    color: #1A2B49;
+}
+
+.btn-cerrar {
+    background-color: #c62828;
+    border-color: #c62828;
+}
+
+.tarjeta-perfil {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.titulo-tarjeta {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    color: #1A2B49;
+}
+
+.grid-datos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+/* En móviles, que se ponga en una sola columna */
+@media (max-width: 600px) {
+    .grid-datos {
+        grid-template-columns: 1fr;
+    }
+}
+
+.etiqueta-dato {
+    display: block;
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.valor-dato {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.badge-rol {
+    background: #eecf6d;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+
+.reserva-item {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #1A2B49;
+    margin-bottom: 1rem;
+}
+
+.estado-confirmada {
+    display: inline-block;
+    margin-top: 10px;
+    color: green;
+    font-weight: bold;
+    font-size: 0.8rem;
+}

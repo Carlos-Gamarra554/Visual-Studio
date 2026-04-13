@@ -10,21 +10,28 @@ class UserModel {
 
     public function insert(array $user): ?int //devuelve entero o null
     {
-        $sql = "INSERT INTO users(usuario, password, name, email)  VALUES (?, ?, ?, ?);";
-        $sentencia = $this->conexion->prepare($sql);
-        $arrayDatos = [
-            $user["usuario"],
-            $user["password"],
-            $user["name"],
-            $user["email"],
-        ];
-        $resultado = $sentencia->execute($arrayDatos);
+        //Usar el try catch para capturar errores
+        try {
+            $sql = "INSERT INTO users(usuario, password, name, email)  VALUES (:usuario, :password, :name, :email);";
+            $sentencia = $this->conexion->prepare($sql);
+            $arrayDatos = [
+                ":usuario" => $user["usuario"],
+                ":password" => $user["password"],
+                ":name" => $user["name"],
+                ":email" => $user["email"],
+            ];
+            $resultado = $sentencia->execute($arrayDatos);
 
-        /*Pasar en el mismo orden de los ? execute devuelve un booleano. 
-        True en caso de que todo vaya bien, falso en caso contrario.*/
-        //Así podriamos evaluar
-        return ($resultado == true) ? $this->conexion->lastInsertId() : null;
+            /*Pasar en el mismo orden de los ? execute devuelve un booleano. 
+            True en caso de que todo vaya bien, falso en caso contrario.*/
+            //Así podriamos evaluar
+            return ($resultado == true) ? $this->conexion->lastInsertId() : null;
+        } catch (Exception $e) {
+            echo 'Excepción capturada: ',  $e->getMessage(), "<bR>";
+            return null;
+        }
     }
+
     public function read(int $id): ?stdClass
     {
         $sentencia = $this->conexion->prepare("SELECT * FROM users WHERE id=:id");
@@ -42,9 +49,12 @@ class UserModel {
 
     public function readAll():array 
 {
-    $sentencia = $this->conexion->query("SELECT * FROM users;");
-//usamos método query
-    $usuarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);    
+    //Actividad 7. Cambiar la sentencia preparada a prepare en vez de query
+    $sentencia = $this->conexion->prepare("SELECT * FROM users;");
+    $sentencia->execute();
+
+    //Actividad 7. Cambiar el fetch para que devuelva un objeto
+    $usuarios = $sentencia->fetchAll(PDO::FETCH_OBJ);    
     return $usuarios;
  }
 
@@ -121,8 +131,44 @@ public function search (string $campo, string $metodo, string $dato): array {
     $resultado = $sentencia->execute($arrayDatos);
 
     if (!$resultado) return [];
-    $users = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    //Actividad 7. Cambiamos a FETCH_OBJ
+    $users = $sentencia->fetchAll(PDO::FETCH_OBJ);
     return $users;
     }
+
+public function login(string $usuario, string $password): ?stdClass {
+        // 1. Buscamos al usuario por su nombre de usuario
+        $sentencia = $this->conexion->prepare("SELECT * FROM users WHERE usuario=:usuario");
+        $sentencia->execute([":usuario" => $usuario]);
+        $user = $sentencia->fetch(PDO::FETCH_OBJ);
+
+        // 2. Si el usuario existe, verificamos la contraseña cifrada
+        if ($user && password_verify($password, $user->password)) {
+            return $user; // Login correcto
+        }
+
+        return null; // Usuario no existe o contraseña incorrecta
+    }
+
+    public function exists(string $campo, string $valor):bool{
+    $camposPermitidos = ["usuario", "email"];
+    if (!in_array($campo, $camposPermitidos)) {
+        return false;
+    }
+
+   $sql = "SELECT COUNT(*) as total FROM users WHERE $campo = :valor";
+    $sentencia = $this->conexion->prepare($sql);
+    $sentencia->execute([":valor" => $valor]);
+    $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
+
+    return ($resultado['total'] > 0);
+   }
+
+   public function getByEmail(string $email): ?stdClass {
+    $sentencia = $this->conexion->prepare("SELECT * FROM users WHERE email = :email");
+    $sentencia->execute([':email' => $email]);
+    $user = $sentencia->fetch(PDO::FETCH_OBJ);
+    return ($user == false) ? null : $user;
+}
 }
 ?>

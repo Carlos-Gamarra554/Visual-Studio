@@ -1,0 +1,189 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+/* Utilización del selector universal para hacer un reset de las propiedades*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Establecemos la tipología de letra y su color para todos los elementos de nuestra página */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+}
+/* Cómo haríamos para tener dos elementos de fondo, en el header,  que sean triangulares y que ocupen toda la pantalla. 
+Pistas:
+background-image
+clip-path
+medidas --> vh,vw
+  */
+
+.header {
+  height: 95vh;;
+  border: 1px solid #777;
+  background-image: linear-gradient(to right bottom, #d3d56fcf, #28b4859f), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+/* Ten en cuenta que si la sección .section-about tiene un background, el triangulo que queda en el header está con el color del body. La solución es subir  
+ esta sección hasta que se rellene el triangulo. */
+
+.section-about. {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh;
+}
+
+/* Método para centrar el texto en la página  */
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.header-primary {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 400;
+  backface-visibility: hidden;
+  margin-bottom: 2rem;
+}
+
+/* De que manera realizaríamos este tipo de animación */
+.main {
+  display: block;
+  font-size: 38px;
+  letter-spacing: 17;
+}
+
+.sub {
+  display: block;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 8px;
+}
+
+/* El heading secundario debe estar alineado en el centro y además dentro del texto tiene que tener 
+un degradado. También, como vemos el texto se deforma y se hace más grande cuando pasamos el ratón por encima.  
+pistas:
+background-clip.
+skew, scale;
+*/
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+}
+.heading-secondary:hover {
+
+}
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* grid. Colócalos como se ve en la imagen  */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 6rem;
+}
+.col1 {
+  grid-column: 1 / 2;
+}
+.col2 {
+}
+/*utilidades de como centrar */
+.center-text {
+  
+}
+
+/*Botones*/
+
+/* El botón tiene que parecer que se hunde cuando hacemos click, para ello cuando nos superponemos 
+encima con el ratón hay que modificar  su posición, para que cuando hagamos click, volvamos a modificar su posición */
+
+.btn,
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+}
+
+.btn:hover {
+}
+
+.btn:active,
+.btn:focus {
+}
+.btn--white {
+  background-color: #fff;
+  color: #777;
+}
+
+/* Necesitamos dar un tamaño y posición a todas las fotos. Además, cuando pasamos el ratón por encima de una de ella se produce un escalado de ella agrandándola
+con una linea por fuera y las demás haciéndolas más pequeñas. 
+Pistas:
+ - outline:
+ - translateY
+ - box-shadow:
+ -z-index
+ -pseudoelemento :not
+
+*/
+
+.composition {
+  position: relative;
+}
+.composition__photo {
+}
+.composition__photo--p1 {
+}
+.composition__photo--p2 {
+}
+.composition__photo--p3 {
+}
+.composition__photo:hover {
+}
+.composition:hover .composition__photo:not(:hover) {
+}
+
+/* Animaciones.   */
+
+@keyframes moveToLeft {
+  
+}
+
+@keyframes moveToRight {
+  
+  }
+}
+
+@keyframes moveToTop {
+  
+}
